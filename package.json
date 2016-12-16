@@ -1,9 +1,8 @@
 {
   "name": "short-js-doc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "myax",
-  "description": "short typing js with doc based jsduck",
-  "main": "index.html", 
+  "description": "short typing js with doc based jsduck",  
   "author": "Miguel Yax",
   "license": "MIT",
   "engines": {
@@ -13,6 +12,11 @@
     "Snippets"
   ],
   "contributes": {
+     "languages": [{
+            "id": "javascript",
+            "aliases": ["JavaScript", "javascript"],
+            "extensions": [".js"]
+        }],
     "snippets": [
       {
         "language": "javascript",

@@ -74,7 +74,7 @@
 		],
 		"description": "Same property and value"
 	},
-	"Asign Property": {
+	"Model Property ": {
 		"prefix": "gp",
 		"body": [
 			"${property}${op::} ${model:model}.${method:get}('${dataIndex}')${1:,}"
@@ -106,8 +106,7 @@
 	},
 	"Object Property": {
 		"prefix": "op",
-		"body": [
-			// "${name}${op::} {${1}},${2}"
+		"body": [			
 			"${name}${op::} {",
 			"	${property}: ${value:''}${1:,}",
 			"}${2:,}"
@@ -177,7 +176,7 @@
 		],
 		"description": "set and get property"
 	},
-	"control variables": {
+	"Control variables": {
 		"prefix": "cv",
 		"body": [
 			"var ${me} = this,",
@@ -185,7 +184,7 @@
 			"	${model} = ${me}.getViewModel(),",
 			"	${refs} = ${me}.getReferences();"
 		],
-		"description": "control variables"
+		"description": "Control variables"
 	},
 	"Ext.Log": {
 		"prefix": "el",
@@ -199,7 +198,7 @@
 		],
 		"description": "Ext.log"
 	},
-	"function property": {
+	"Function property": {
 		"prefix": "fp",
 		"body": [
 			"/**",
@@ -212,7 +211,7 @@
 		],
 		"description": "Function Property"
 	},
-	"method property": {
+	"Method property": {
 		"prefix": "mp",
 		"body": [
 			"/**",
@@ -226,7 +225,7 @@
 			"	return ${variable};",
 			"},${3}"
 		],
-		"description": "method Property"
+		"description": "Method Property"
 	},
 	"Ext Widget": {
 		"prefix": "ew",
