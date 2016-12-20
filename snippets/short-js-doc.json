@@ -8,7 +8,7 @@
 		"prefix": "at",
 		"body": [
 			"/**",
-			" * @author ${user:MYAX} <${email:mig_dj@hotmail.com}>",
+			" * @author ${user} <${email}>",
 			" * date ${month}/${day}/${year}",
 			" * ${description}",
 			" */"
