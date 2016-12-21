@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "publisher": "myax",
   "description": "short typing js with doc based jsduck",  
-  "author": "Miguel Yax",
+  "author": "Miguel Yax <mig_dj@hotmail.com>",
   "license": "MIT",
   "engines": {
     "vscode": "0.10.x"
