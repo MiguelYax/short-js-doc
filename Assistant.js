@@ -258,17 +258,21 @@ window.onload = function () {
   for (var index = 0; index < keyList.length; index++) {
     var name = keyList[index];
     var snippet = rawSnippets[name];
-    var lowerName = name.toLowerCase().replace(/\s/g, '');
+    var lowerName = name.toLowerCase().replace(/\s/g, '-');
+    // var lowerName = name;
     contentList.push('- [' + name + '](#' + lowerName + ')\n');
-
-    documentList.push('### `' + snippet.prefix + ' + tab` ' + name + '\n');
+    documentList.push('### ' + name + '\n');
+    documentList.push('#### `' + snippet.prefix + '+tab` \n');
     documentList.push('```\n' + snippet.body.join('\n') + '\n``` \n\n');
 
     var docContent = '# Short Javascript Snippets and Documentation  \n # short-js-doc  \n\n  A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDuck Ducumentation implenting for Sencha Ext JS \n';
     docContent += contentList.join('') + '\n\n';
     docContent += '### Example:  \n\n';
     docContent += documentList.join('');
-
+    var body = document.getElementsByTagName('div');
+    if (body) {
+      body.innerHTML = docContent;
+    }
     console.log(docContent);
   }
 };

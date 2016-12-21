@@ -1,35 +1,35 @@
-# Short Javascript Snippets and Documentation
-
-# short-js-doc  
+# Short Javascript Snippets and Documentation  
+ # short-js-doc  
 
   A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDuck Ducumentation implenting for Sencha Ext JS 
-- [Author Tag Information - jsduck](#authortaginformation-jsduck)
-- [Ext Definition - jsduck](#extdefinition-jsduck)
-- [Property documentation - jsduck](#propertydocumentation-jsduck)
-- [Property definition - jsduck](#propertydefinition-jsduck)
+- [Author Tag Information - jsduck](#author-tag-information---jsduck)
+- [Ext Definition - jsduck](#ext-definition---jsduck)
+- [Property documentation - jsduck](#property-documentation---jsduck)
+- [Property definition - jsduck](#property-definition---jsduck)
 - [Property](#property)
-- [Same Property](#sameproperty)
-- [Model Property ](#modelproperty)
-- [Bind Property](#bindproperty)
-- [Bind configuration](#bindconfiguration)
-- [Array Property](#arrayproperty)
-- [Object Property](#objectproperty)
-- [Context Tag](#contexttag)
-- [Console Debug - Ext JS](#consoledebug-extjs)
-- [Comment code](#commentcode)
-- [Update Function](#updatefunction)
-- [Set & Get Property](#set&getproperty)
-- [Control variables](#controlvariables)
+- [Same Property](#same-property)
+- [Model Property ](#model-property-)
+- [Bind Property](#bind-property)
+- [Bind configuration](#bind-configuration)
+- [Array Property](#array-property)
+- [Object Property](#object-property)
+- [Context Tag](#context-tag)
+- [Console Debug - Ext JS](#console-debug---ext-js)
+- [Comment code](#comment-code)
+- [Update Function](#update-function)
+- [Set & Get Property](#set-&-get-property)
+- [Control variables](#control-variables)
 - [Ext.Log](#ext.log)
-- [Function property](#functionproperty)
-- [Method property](#methodproperty)
-- [Ext Widget](#extwidget)
-- [Call Function](#callfunction)
+- [Function property](#function-property)
+- [Method property](#method-property)
+- [Ext Widget](#ext-widget)
+- [Call Function](#call-function)
 
 
 ### Example:  
 
-### `at + tab` Author Tag Information - jsduck
+### Author Tag Information - jsduck
+#### `at+tab` 
 ```
 /**
  * @author ${user:MYAX} <${email:mig_dj@hotmail.com}>
@@ -38,7 +38,8 @@
  */
 ``` 
 
-### `ed + tab` Ext Definition - jsduck
+### Ext Definition - jsduck
+#### `ed+tab` 
 ```
 /**
  * @class ${name}
@@ -64,12 +65,14 @@ Ext.define('${name}', {
 });
 ``` 
 
-### `pt + tab` Property documentation - jsduck
+### Property documentation - jsduck
+#### `pt+tab` 
 ```
 @${1:mode} {${2:String}} ${3:name}  `${4:default}` ${5:description}
 ``` 
 
-### `pd + tab` Property definition - jsduck
+### Property definition - jsduck
+#### `pd+tab` 
 ```
 /*
  * @${mode:cfg} {${type:String}} ${name}  `${default}` ${description}
@@ -77,65 +80,76 @@ Ext.define('${name}', {
 ${name}${op::} ${default:null}${1:,}
 ``` 
 
-### `pp + tab` Property
+### Property
+#### `pp+tab` 
 ```
 ${property}: ${default:null}${1:,}
 ``` 
 
-### `sp + tab` Same Property
+### Same Property
+#### `sp+tab` 
 ```
 ${property}: ${1}${property} ${2:,}
 ``` 
 
-### `gp + tab` Model Property 
+### Model Property 
+#### `gp+tab` 
 ```
 ${property}${op::} ${model:model}.${method:get}('${dataIndex}')${1:,}
 ``` 
 
-### `bp + tab` Bind Property
+### Bind Property
+#### `bp+tab` 
 ```
 ${property}: '{${value}}'${1:,}
 ``` 
 
-### `bind + tab` Bind configuration
+### Bind configuration
+#### `bind+tab` 
 ```
 ${name:bind}:{
 	${property}:'{${value}}'${1:,}
 }${2:,}
 ``` 
 
-### `ap + tab` Array Property
+### Array Property
+#### `ap+tab` 
 ```
 ${name}${op::} [${1}]${2:,}
 ``` 
 
-### `op + tab` Object Property
+### Object Property
+#### `op+tab` 
 ```
 ${name}${op::} {
 	${property}: ${value:''}${1:,}
 }${2:,}
 ``` 
 
-### `ct + tab` Context Tag
+### Context Tag
+#### `ct+tab` 
 ```
 @${1:private} ${2:args}
 ``` 
 
-### `cd + tab` Console Debug - Ext JS
+### Console Debug - Ext JS
+#### `cd+tab` 
 ```
 //<debug>
 	console.${log}('${debug}', ${arguments});
 //</debug>
 ``` 
 
-### `cc + tab` Comment code
+### Comment code
+#### `cc+tab` 
 ```
 /**
  * ${1}
  */
 ``` 
 
-### `uf + tab` Update Function
+### Update Function
+#### `uf+tab` 
 ```
  /**
   * @${private}
@@ -145,7 +159,8 @@ update${Property}: function (new${Property}, old${Property}) {
 },${3}
 ``` 
 
-### `sg + tab` Set & Get Property
+### Set & Get Property
+#### `sg+tab` 
 ```
 /**
  * @param {${type}} ${name}  `${default}` ${description} 
@@ -169,7 +184,8 @@ get${prop:Property}${op::} function () {
 },${2}
 ``` 
 
-### `cv + tab` Control variables
+### Control variables
+#### `cv+tab` 
 ```
 var ${me} = this,
 	${view} = ${me}.getView(),
@@ -177,7 +193,8 @@ var ${me} = this,
 	${refs} = ${me}.getReferences();
 ``` 
 
-### `el + tab` Ext.Log
+### Ext.Log
+#### `el+tab` 
 ```
 ${Ext}.log({
 	msg: '${message:debug}',
@@ -187,7 +204,8 @@ ${Ext}.log({
 });
 ``` 
 
-### `fp + tab` Function property
+### Function property
+#### `fp+tab` 
 ```
 /**
  * ${name} ${description}
@@ -198,7 +216,8 @@ ${name}${1::} function (${2}) {
 },${4}
 ``` 
 
-### `mp + tab` Method property
+### Method property
+#### `mp+tab` 
 ```
 /**
  * @method ${name} ${desc:description}
@@ -212,12 +231,14 @@ ${name}${op::} function (${1}) {
 },${3}
 ``` 
 
-### `ew + tab` Ext Widget
+### Ext Widget
+#### `ew+tab` 
 ```
 Ext.${widget}('${xtype}'${1:,{${0}}});
 ``` 
 
-### `cf + tab` Call Function
+### Call Function
+#### `cf+tab` 
 ```
 ${function}(${1});
-```
+``` 
