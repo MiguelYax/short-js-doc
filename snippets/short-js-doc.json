@@ -1,9 +1,4 @@
 {
-	/*
-	* @author MYAX <mig_dj@hotmail.com>
-	* @date 7/8/16
-	* @description javascript documentations - jsduck sintaxis
-	*/
 	"at": {
 		"prefix": "at",
 		"body": [
@@ -41,7 +36,7 @@
 			"  }",
 			"});"
 		],
-		"description": "Ext JS - Class Definition"
+		"description": "Ext JS Class Definition"
 	},
 	"pt": {
 		"prefix": "pt",
@@ -65,7 +60,7 @@
 		"body": [
 			"${1:property}${2::} ${3:null}${4:,}"
 		],
-		"description": "Object property"
+		"description": "Property"
 	},
 	"ep": {
 		"prefix": "ep",
@@ -86,7 +81,7 @@
 		"body": [
 			"${1:property}${2::} ${3:model}.${4:get}('${5:dataIndex}')${6:,}"
 		],
-		"description": "Object property "
+		"description": "Get Property"
 	},
 	"bp": {
 		"prefix": "bp",
@@ -205,7 +200,7 @@
 			"  stack: ${false}",
 			"});"
 		],
-		"description": "Ext.log"
+		"description": "Ext log"
 	},
 	"fp": {
 		"prefix": "fp",

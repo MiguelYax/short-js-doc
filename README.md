@@ -1,244 +1,264 @@
-# Short Javascript Snippets and Documentation  
- # short-js-doc  
+# Short JS Doc  
+short-js-doc  
 
-  A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDuck Ducumentation implenting for Sencha Ext JS 
-- [Author Tag Information - jsduck](#author-tag-information---jsduck)
-- [Ext Definition - jsduck](#ext-definition---jsduck)
-- [Property documentation - jsduck](#property-documentation---jsduck)
-- [Property definition - jsduck](#property-definition---jsduck)
+  # Short Javascript Snippets and Documentation based on JSDuck.  
+ A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDuck Ducumentation implenting for Sencha Ext JS. 
+### Content:  
+
+- [Access object property](#accessobjectproperty)
+- [Array property](#arrayproperty)
+- [Author Information](#authorinformation)
+- [Bind configuration](#bindconfiguration)
+- [Bind property](#bindproperty)
+- [Comment code](#commentcode)
+- [console debug block](#consoledebugblock)
+- [call function](#callfunction)
+- [Context Tag](#contexttag)
+- [Control variables](#controlvariables)
+- [Ext JS Class Definition](#extjsclassdefinition)
+- [Equal name property and value](#equalnamepropertyandvalue)
+- [Ext Widget](#extwidget)
+- [Function Property](#functionproperty)
+- [Get Property](#getproperty)
+- [Method Property](#methodproperty)
+- [Object property](#objectproperty)
+- [Property definition](#propertydefinition)
 - [Property](#property)
-- [Same Property](#same-property)
-- [Model Property ](#model-property-)
-- [Bind Property](#bind-property)
-- [Bind configuration](#bind-configuration)
-- [Array Property](#array-property)
-- [Object Property](#object-property)
-- [Context Tag](#context-tag)
-- [Console Debug - Ext JS](#console-debug---ext-js)
-- [Comment code](#comment-code)
-- [Update Function](#update-function)
-- [Set & Get Property](#set-&-get-property)
-- [Control variables](#control-variables)
-- [Ext.Log](#ext.log)
-- [Function property](#function-property)
-- [Method property](#method-property)
-- [Ext Widget](#ext-widget)
-- [Call Function](#call-function)
+- [Property Tag](#propertytag)
+- [set and get property](#setandgetproperty)
+- [String property](#stringproperty)
+- [update function property](#updatefunctionproperty)
+- [Ext log](#extlog)
 
 
 ### Example:  
 
-### Author Tag Information - jsduck
-#### `at+tab` 
+### accessObjectProperty
+#### `aop + tab` 
 ```
-/**
- * @author ${user:MYAX} <${email:mig_dj@hotmail.com}>
- * date ${month}/${day}/${year}
- * ${description}
+${1:object}[${2:'${3:property}'}];
+``` 
+
+### arrayProperty
+#### `ap + tab` 
+```
+${1:name}${2::} [${3}]${4:,}
+``` 
+
+### authorInformation
+#### `at + tab` 
+```
+/*!
+ * @author ${1:user} <${2:email}>
+ * date ${3:month}/${4:day}/${5:year}
+ * ${6:description}
  */
 ``` 
 
-### Ext Definition - jsduck
-#### `ed+tab` 
+### bindConfiguration
+#### `bc + tab` 
 ```
-/**
- * @class ${name}
- * @extends ${extend}
- * @alternateClassName ${alternateName} 
- * @xtype ${xtype}
- * ${description}
- */
-Ext.define('${name}', {
-	extend: '${extend}',
-	alternateClassName: '${alternateName}',
-	xtype: '${xtype}',
-	//requires: [${1}],
-	initComponent: function (){
-		var ${me} = this,
-			${Ex} = Ext;
-
-		${Ex}.apply(${me}, {
- 		 	items: [${args:}]
-		});
-		${me}.callParent(${arguments});
-	}
-});
+${1:bind}:{
+  ${2:property}:'{${3:value}}'${4:,}
+}${5:,}
 ``` 
 
-### Property documentation - jsduck
-#### `pt+tab` 
+### bindProperty
+#### `bp + tab` 
 ```
-@${1:mode} {${2:String}} ${3:name}  `${4:default}` ${5:description}
+${1:property}: '{${2:value}}'${3:,}
 ``` 
 
-### Property definition - jsduck
-#### `pd+tab` 
-```
-/*
- * @${mode:cfg} {${type:String}} ${name}  `${default}` ${description}
- */
-${name}${op::} ${default:null}${1:,}
-``` 
-
-### Property
-#### `pp+tab` 
-```
-${property}: ${default:null}${1:,}
-``` 
-
-### Same Property
-#### `sp+tab` 
-```
-${property}: ${1}${property} ${2:,}
-``` 
-
-### Model Property 
-#### `gp+tab` 
-```
-${property}${op::} ${model:model}.${method:get}('${dataIndex}')${1:,}
-``` 
-
-### Bind Property
-#### `bp+tab` 
-```
-${property}: '{${value}}'${1:,}
-``` 
-
-### Bind configuration
-#### `bind+tab` 
-```
-${name:bind}:{
-	${property}:'{${value}}'${1:,}
-}${2:,}
-``` 
-
-### Array Property
-#### `ap+tab` 
-```
-${name}${op::} [${1}]${2:,}
-``` 
-
-### Object Property
-#### `op+tab` 
-```
-${name}${op::} {
-	${property}: ${value:''}${1:,}
-}${2:,}
-``` 
-
-### Context Tag
-#### `ct+tab` 
-```
-@${1:private} ${2:args}
-``` 
-
-### Console Debug - Ext JS
-#### `cd+tab` 
-```
-//<debug>
-	console.${log}('${debug}', ${arguments});
-//</debug>
-``` 
-
-### Comment code
-#### `cc+tab` 
+### commentCode
+#### `cc + tab` 
 ```
 /**
  * ${1}
  */
 ``` 
 
-### Update Function
-#### `uf+tab` 
+### consoleDebugBlock
+#### `cd + tab` 
 ```
- /**
-  * @${private}
-  */
-update${Property}: function (new${Property}, old${Property}) {
-	${2}
-},${3}
+//<debug>
+${1}
+console.${2:log}('${3:debug}', ${4:arguments});
+//</debug>
 ``` 
 
-### Set & Get Property
-#### `sg+tab` 
+### callFunction
+#### `cf + tab` 
+```
+${1:function}(${2});
+``` 
+
+### contextTag
+#### `ct + tab` 
+```
+@${1:private} ${2:args}
+``` 
+
+### controlVariables
+#### `cv + tab` 
+```
+var ${1:me} = this,
+  ${2:view} = ${1:me}.getView(),
+  ${3:model} = ${1:me}.getViewModel(),
+  ${4:refs} = ${1:me}.getReferences()${5:;}
+``` 
+
+### extJSClassDefinition
+#### `ed + tab` 
 ```
 /**
- * @param {${type}} ${name}  `${default}` ${description} 
- * @${public}
+ * @class ${1:name}
+ * @extends ${2:extend}
+ * @alternateClassName ${3:alternateName} 
+ * @xtype ${4:xtype}
+ * ${5:description}
  */
-set${prop:Property}${op::} function (${name}) {
-	var old${name} = this.${name};
-	if (${name} !== old${name}) {
-		this.${name} = ${name};
-		//this.update${prop}(${name}, old${name});
-   }
-},
-/**
- * @return {${type}} ${name} `${default}` ${description} 
- * @${public}
- */
-get${prop:Property}${op::} function () {
-	var ${name} = this.${name} || ${default};
-	${1}
-	return ${name};
-},${2}
-``` 
+Ext.define('${1:name}', {
+  extend: '${2:extend}',
+  alternateClassName: '${3:alternateName}',
+  xtype: '${4:xtype}',
+  ${6://}requires: [${7}],
+  initComponent: function (){
+    var ${8:me} = this,
+      ${9:Ex} = Ext;
 
-### Control variables
-#### `cv+tab` 
-```
-var ${me} = this,
-	${view} = ${me}.getView(),
-	${model} = ${me}.getViewModel(),
-	${refs} = ${me}.getReferences();
-``` 
-
-### Ext.Log
-#### `el+tab` 
-```
-${Ext}.log({
-	msg: '${message:debug}',
-	level: '${type:warn}',
-	dump: ${arguments},
-	stack: ${false}
+    ${9:Ex}.apply(${8:me}, {
+      items: [${10:args:}]
+    });
+    ${8:me}.callParent(${11:arguments});
+  }
 });
 ``` 
 
-### Function property
-#### `fp+tab` 
+### equalNamePropertyAndValue
+#### `ep + tab` 
 ```
-/**
- * ${name} ${description}
- * @${scope:private}
- */
-${name}${1::} function (${2}) {
-	${3}
-},${4}
+${1:property}${2::} ${3}${4:property} ${5:,}
 ``` 
 
-### Method property
-#### `mp+tab` 
-```
-/**
- * @method ${name} ${desc:description}
- * @return {${type}} ${variable} `${default}` ${description}
- * @${scope:private}
- */
-${name}${op::} function (${1}) {
-	var ${variable} = ${default:null};
-	${2}
-	return ${variable};
-},${3}
-``` 
-
-### Ext Widget
-#### `ew+tab` 
+### extWidget
+#### `ew + tab` 
 ```
 Ext.${widget}('${xtype}'${1:,{${0}}});
 ``` 
 
-### Call Function
-#### `cf+tab` 
+### functionProperty
+#### `fp + tab` 
 ```
-${function}(${1});
+/**
+ * ${1:name} ${2:description}
+ * @${3:private}
+ */
+${1:name}${4::} function (${5}) {
+  ${6}
+}${7:,}
 ``` 
+
+### getProperty
+#### `gp + tab` 
+```
+${1:property}${2::} ${3:model}.${4:get}('${5:dataIndex}')${6:,}
+``` 
+
+### methodProperty
+#### `mp + tab` 
+```
+/**
+ * @method ${1:name} ${2:description}
+ * @return {${3:type}} ${4:property} `${5:default}` ${6:description}
+ * @${7:private}
+ */
+ ${1:name}${9::} function (${10}) {
+  var ${4:property} = ${5:null};
+  ${13}
+  return ${4:property};
+}${15:,}
+``` 
+
+### objectProperty
+#### `op + tab` 
+```
+${1:name}${2::} {
+  ${3:${4:property}: ${5:''}${6:,}}
+}${7:,}
+``` 
+
+### propertyDefinition
+#### `pd + tab` 
+```
+/*
+ * @${1:cfg} {${2:type}} ${3:name}  `${4:default}` ${5:description}
+ */
+${3:name}${6::} ${4:null}${7:,}
+``` 
+
+### property
+#### `pp + tab` 
+```
+${1:property}${2::} ${3:null}${4:,}
+``` 
+
+### propertyTag
+#### `pt + tab` 
+```
+@${1:mode} {${2:type}} ${3:name}  `${4:default}` ${5:description}
+``` 
+
+### setAndGetProperty
+#### `sg + tab` 
+```
+/**
+ * @param {${1:type}} ${2:name}  `${3:default}` ${4:description} 
+ * @${5:public}
+ */
+set${6:Property}${7::} function (${2:name}) {
+  var old${2:name} = this.${2:name};
+  if (${2:name} !== old${2:name}) {
+    ${8}
+    this.${2:name} = ${2:name};
+    //this.update${6:Property}(${2:name}, old${2:name});
+  }
+}${10:,}
+/**
+ * @return {${1:type}} ${2:name} `${3:default}` ${4:description} 
+ * @${5:public}
+ */
+get${6:Property}${7::} function () {
+  var ${2:name} = this.${2:name} || ${3:default};
+  ${9}
+  return ${2:name};
+}${10:,}
+``` 
+
+### stringProperty
+#### `sp + tab` 
+```
+${1:property}${2::} '${3:value}'${4:,}
+``` 
+
+### updateFunctionProperty
+#### `uf + tab` 
+```
+ /**
+  * @${1:private}
+  */
+update${2:Property} ${3::} function (new${2:Property}, old${2:Property}) {
+  ${4}
+}${3:,}
+``` 
+
+### extLog
+#### `xl + tab` 
+```
+${Ext}.log({
+  msg: '${message:debug}',
+  level: '${type:warn}',
+  dump: ${arguments},
+  stack: ${false}
+});
+``` 
+

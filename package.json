@@ -1,22 +1,30 @@
 {
   "name": "short-js-doc",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "publisher": "myax",
-  "description": "short typing js with doc based jsduck",  
+  "displayName": "Short JS Doc",
+  "description": "Short Javascript Snippets and Documentation based on JSDuck.  \n A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDuck Ducumentation implenting for Sencha Ext JS.",
   "author": "Miguel Yax <mig_dj@hotmail.com>",
+  "icon": "images/icon.png",
   "license": "MIT",
   "engines": {
-    "vscode": "0.10.x"
+    "vscode": "^0.10.1"
   },
   "categories": [
     "Snippets"
   ],
   "contributes": {
-     "languages": [{
-            "id": "javascript",
-            "aliases": ["JavaScript", "javascript"],
-            "extensions": [".js"]
-        }],
+    "languages": [
+      {
+        "id": "javascript",
+        "aliases": [
+          "JavaScript"
+        ],
+        "extensions": [
+          ".js"
+        ]
+      }
+    ],
     "snippets": [
       {
         "language": "javascript",
@@ -25,7 +33,10 @@
     ]
   },
   "repository": {
-		"type": "git",
-		"url": "https://github.com/Krazeus/short-js-doc.git"
-	}
+    "type": "git",
+    "url": "https://github.com/Krazeus/short-js-doc.git"
+  },
+  "devDependencies": {
+    "express": "^4.15.2"
+  }
 }
