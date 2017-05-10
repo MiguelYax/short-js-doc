@@ -20,6 +20,7 @@ short-js-doc
 - [Ext Widget](#extwidget)
 - [Function Property](#functionproperty)
 - [Get Property](#getproperty)
+- [Generic Tag](#generictag)
 - [Method Property](#methodproperty)
 - [Object property](#objectproperty)
 - [Property definition](#propertydefinition)
@@ -27,6 +28,7 @@ short-js-doc
 - [Property Tag](#propertytag)
 - [set and get property](#setandgetproperty)
 - [String property](#stringproperty)
+- [Todo Tag](#todotag)
 - [update function property](#updatefunctionproperty)
 - [Ext log](#extlog)
 
@@ -164,6 +166,14 @@ ${1:name}${4::} function (${5}) {
 ${1:property}${2::} ${3:model}.${4:get}('${5:dataIndex}')${6:,}
 ``` 
 
+### genericTag
+#### `gt + tab` 
+```
+/**
+ * @${1:tag} ${2} 
+ */
+``` 
+
 ### methodProperty
 #### `mp + tab` 
 ```
@@ -238,6 +248,14 @@ get${6:Property}${7::} function () {
 #### `sp + tab` 
 ```
 ${1:property}${2::} '${3:value}'${4:,}
+``` 
+
+### todoTag
+#### `tt + tab` 
+```
+/**
+ * @todo ${1:description}
+ */
 ``` 
 
 ### updateFunctionProperty

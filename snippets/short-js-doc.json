@@ -251,5 +251,23 @@
 			"${1:object}[${2:'${3:property}'}];"
 		],
 		"description": "Access object property"
+	},
+	"tt": {
+		"prefix": "tt",
+		"body": [
+			"/**",
+			" * @todo ${1:description}",
+			" */"
+		],
+		"description": "Todo Tag"
+	},
+	"gt": {
+		"prefix": "gt",
+		"body": [
+			"/**",
+			" * @${1:tag} ${2} ",
+			" */"
+		],
+		"description": "Generic Tag"
 	}
 }
