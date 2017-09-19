@@ -169,7 +169,7 @@
 			"  }",
 			"}${10:,}",
 			"/**",
-			" * @return {${1:type}} ${2:name} `${3:default}` ${4:description} ",
+			" * @returns {${1:type}} ${2:name} `${3:default}` ${4:description} ",
 			" * @${5:public}",
 			" */",
 			"get${6:Property}${7::} function () {",
@@ -220,7 +220,7 @@
 		"body": [
 			"/**",
 			" * @method ${1:name} ${2:description}",
-			" * @return {${3:type}} ${4:property} `${5:default}` ${6:description}",
+			" * @returns {${3:type}} ${4:property} `${5:default}` ${6:description}",
 			" * @${7:private}",
 			" */",
 			" ${1:name}${9::} function (${10}) {",
@@ -252,8 +252,8 @@
 		],
 		"description": "Access object property"
 	},
-	"tt": {
-		"prefix": "tt",
+	"td": {
+		"prefix": "td",
 		"body": [
 			"/**",
 			" * @todo ${1:description}",
@@ -269,5 +269,33 @@
 			" */"
 		],
 		"description": "Generic Tag"
+	},
+	"vt": {
+		"prefix": "vt",
+		"body": [
+			"/**",
+			" * @version ${1:major}${2:minor}${2:patch} ",
+			" */"
+		],
+		"description": "Version Tag"
+	},
+	"dt": {
+		"prefix": "dt",
+		"body": [
+			"/**",
+			" * @deprecated   ${1} ",
+			" */"
+		],
+		"description": "Deprecated Tag"
+	},
+	"crt": {
+		"prefix": "crt",
+		"body": [
+			"/**",
+			" * @copyright  ${1:name} ${2:year} ",
+			" * ${3} ",
+			" */"
+		],
+		"description": "Copyright Tag"
 	}
 }
