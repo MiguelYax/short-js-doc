@@ -13,8 +13,10 @@ short-js-doc
 - [Comment code](#commentcode)
 - [console debug block](#consoledebugblock)
 - [call function](#callfunction)
+- [Copyright Tag](#copyrighttag)
 - [Context Tag](#contexttag)
 - [Control variables](#controlvariables)
+- [Deprecated Tag](#deprecatedtag)
 - [Ext JS Class Definition](#extjsclassdefinition)
 - [Equal name property and value](#equalnamepropertyandvalue)
 - [Ext Widget](#extwidget)
@@ -30,6 +32,7 @@ short-js-doc
 - [String property](#stringproperty)
 - [Todo Tag](#todotag)
 - [update function property](#updatefunctionproperty)
+- [Version Tag](#versiontag)
 - [Ext log](#extlog)
 
 
@@ -94,6 +97,15 @@ console.${2:log}('${3:debug}', ${4:arguments});
 ${1:function}(${2});
 ``` 
 
+### copyrightTag
+#### `crt + tab` 
+```
+/**
+ * @copyright  ${1:name} ${2:year} 
+ * ${3} 
+ */
+``` 
+
 ### contextTag
 #### `ct + tab` 
 ```
@@ -107,6 +119,14 @@ var ${1:me} = this,
   ${2:view} = ${1:me}.getView(),
   ${3:model} = ${1:me}.getViewModel(),
   ${4:refs} = ${1:me}.getReferences()${5:;}
+``` 
+
+### deprecatedTag
+#### `dt + tab` 
+```
+/**
+ * @deprecated   ${1} 
+ */
 ``` 
 
 ### extJSClassDefinition
@@ -179,7 +199,7 @@ ${1:property}${2::} ${3:model}.${4:get}('${5:dataIndex}')${6:,}
 ```
 /**
  * @method ${1:name} ${2:description}
- * @return {${3:type}} ${4:property} `${5:default}` ${6:description}
+ * @returns {${3:type}} ${4:property} `${5:default}` ${6:description}
  * @${7:private}
  */
  ${1:name}${9::} function (${10}) {
@@ -234,7 +254,7 @@ set${6:Property}${7::} function (${2:name}) {
   }
 }${10:,}
 /**
- * @return {${1:type}} ${2:name} `${3:default}` ${4:description} 
+ * @returns {${1:type}} ${2:name} `${3:default}` ${4:description} 
  * @${5:public}
  */
 get${6:Property}${7::} function () {
@@ -251,7 +271,7 @@ ${1:property}${2::} '${3:value}'${4:,}
 ``` 
 
 ### todoTag
-#### `tt + tab` 
+#### `td + tab` 
 ```
 /**
  * @todo ${1:description}
@@ -267,6 +287,14 @@ ${1:property}${2::} '${3:value}'${4:,}
 update${2:Property} ${3::} function (new${2:Property}, old${2:Property}) {
   ${4}
 }${3:,}
+``` 
+
+### versionTag
+#### `vt + tab` 
+```
+/**
+ * @version ${1:major}${2:minor}${2:patch} 
+ */
 ``` 
 
 ### extLog

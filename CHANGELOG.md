@@ -1,3 +1,6 @@
+## 0.1.6 (2017-09-18)
+
+* add copyright, to do, and version tag. 
 
 ## 0.1.5 (2017-05-10)
 
