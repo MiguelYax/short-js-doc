@@ -13,6 +13,7 @@ short-js-doc
 - [Comment code](#commentcode)
 - [console debug block](#consoledebugblock)
 - [call function](#callfunction)
+- [console debug block](#consoledebugblock)
 - [Copyright Tag](#copyrighttag)
 - [Context Tag](#contexttag)
 - [Control variables](#controlvariables)
@@ -47,7 +48,7 @@ ${1:object}[${2:'${3:property}'}];
 ### arrayProperty
 #### `ap + tab` 
 ```
-${1:name}${2::} [${3}]${4:,}
+${1:name}${2|:,=|} [${3}]${4:,}
 ``` 
 
 ### authorInformation
@@ -64,8 +65,8 @@ ${1:name}${2::} [${3}]${4:,}
 #### `bc + tab` 
 ```
 ${1:bind}:{
-  ${2:property}:'{${3:value}}'${4:,}
-}${5:,}
+  ${2:property}: '{${3:value}}',$0
+},
 ``` 
 
 ### bindProperty
@@ -78,7 +79,7 @@ ${1:property}: '{${2:value}}'${3:,}
 #### `cc + tab` 
 ```
 /**
- * ${1}
+ * $0
  */
 ``` 
 
@@ -87,14 +88,23 @@ ${1:property}: '{${2:value}}'${3:,}
 ```
 //<debug>
 ${1}
-console.${2:log}('${3:debug}', ${4:arguments});
+console.${2|log,info,warn,error|}('${3:debug}', ${4:arguments}); $0
 //</debug>
 ``` 
 
 ### callFunction
 #### `cf + tab` 
 ```
-${1:function}(${2});
+${1:function}($0);
+``` 
+
+### consoleDebugBlock
+#### `cm + tab` 
+```
+//<debug>
+${1}
+console.${2|assert,count,debug,dir,dirxml,error,group,groupCollapsed,groupEnd,info,log,profile,profileEnd,table,time,timeEnd,timeStamp,trace,warn|}(${4:arguments}); $0
+//</debug>
 ``` 
 
 ### copyrightTag
@@ -102,14 +112,14 @@ ${1:function}(${2});
 ```
 /**
  * @copyright  ${1:name} ${2:year} 
- * ${3} 
+ * $0 
  */
 ``` 
 
 ### contextTag
 #### `ct + tab` 
 ```
-@${1:private} ${2:args}
+@${1|private,protected,public|} ${2:args}
 ``` 
 
 ### controlVariables
@@ -125,7 +135,7 @@ var ${1:me} = this,
 #### `dt + tab` 
 ```
 /**
- * @deprecated   ${1} 
+ * @deprecated $0 
  */
 ``` 
 
@@ -135,23 +145,25 @@ var ${1:me} = this,
 /**
  * @class ${1:name}
  * @extends ${2:extend}
- * @alternateClassName ${3:alternateName} 
  * @xtype ${4:xtype}
  * ${5:description}
  */
 Ext.define('${1:name}', {
   extend: '${2:extend}',
-  alternateClassName: '${3:alternateName}',
   xtype: '${4:xtype}',
   ${6://}requires: [${7}],
   initComponent: function (){
-    var ${8:me} = this,
-      ${9:Ex} = Ext;
+    var ${8:me} = this;
 
-    ${9:Ex}.apply(${8:me}, {
-      items: [${10:args:}]
+    Ext.apply(${8:me}, {
+      items: [
+       {
+        $0
+       }
+      ]
     });
-    ${8:me}.callParent(${11:arguments});
+
+    ${8:me}.callParent(arguments);
   }
 });
 ``` 
@@ -159,13 +171,15 @@ Ext.define('${1:name}', {
 ### equalNamePropertyAndValue
 #### `ep + tab` 
 ```
-${1:property}${2::} ${3}${4:property} ${5:,}
+${1:property}${2|:,=|} ${3}${4:property} ${5:,}
 ``` 
 
 ### extWidget
 #### `ew + tab` 
 ```
-Ext.${widget}('${xtype}'${1:,{${0}}});
+Ext.${1|widget,create|}('${xtype}',{
+  $0
+});
 ``` 
 
 ### functionProperty
@@ -173,9 +187,9 @@ Ext.${widget}('${xtype}'${1:,{${0}}});
 ```
 /**
  * ${1:name} ${2:description}
- * @${3:private}
+ * @${3|private,protected,public|}
  */
-${1:name}${4::} function (${5}) {
+${1:name}${4|:,=|} function (${5}) {
   ${6}
 }${7:,}
 ``` 
@@ -183,14 +197,14 @@ ${1:name}${4::} function (${5}) {
 ### getProperty
 #### `gp + tab` 
 ```
-${1:property}${2::} ${3:model}.${4:get}('${5:dataIndex}')${6:,}
+${1:property}${2|:,=|} ${3:model}.${4:get}('${5:dataIndex}')${6:,}
 ``` 
 
 ### genericTag
 #### `gt + tab` 
 ```
 /**
- * @${1:tag} ${2} 
+ * @${1:tag} $0 
  */
 ``` 
 
@@ -198,44 +212,44 @@ ${1:property}${2::} ${3:model}.${4:get}('${5:dataIndex}')${6:,}
 #### `mp + tab` 
 ```
 /**
- * @method ${1:name} ${2:description}
- * @returns {${3:type}} ${4:property} `${5:default}` ${6:description}
- * @${7:private}
+ * @${1|method,function|} ${2:name} ${3:description}
+ * @returns {${4|String,Number,Boolean,Object,Array,Function,Date|}} ${5:property} `${6:default}` ${7:description}
+ * @${8|private,protected,public|}
  */
- ${1:name}${9::} function (${10}) {
-  var ${4:property} = ${5:null};
-  ${13}
-  return ${4:property};
-}${15:,}
+ ${2:name} ${9|:,=|} function (${10}) {
+  var ${5:property} = ${6:null};
+  $0
+  return ${5:property};
+}
 ``` 
 
 ### objectProperty
 #### `op + tab` 
 ```
 ${1:name}${2::} {
-  ${3:${4:property}: ${5:''}${6:,}}
-}${7:,}
+  ${4:property}: ${5:''}, $0
+},
 ``` 
 
 ### propertyDefinition
 #### `pd + tab` 
 ```
 /*
- * @${1:cfg} {${2:type}} ${3:name}  `${4:default}` ${5:description}
+ * @${1|cfg,arg,argument|} {${2|String,Number,Boolean,Object,Array,Function,Date|}${3}} ${4:name}  `${5:default}` ${6:description}
  */
-${3:name}${6::} ${4:null}${7:,}
+${4:name}${7|:,=|} ${5:null}${8:,}
 ``` 
 
 ### property
 #### `pp + tab` 
 ```
-${1:property}${2::} ${3:null}${4:,}
+${1:property}${2|:,=|} ${3:null}${4:,}
 ``` 
 
 ### propertyTag
 #### `pt + tab` 
 ```
-@${1:mode} {${2:type}} ${3:name}  `${4:default}` ${5:description}
+@${1|param,arg,argument|} {${2|String,Number,Boolean,Object,Array,Function,Date|}${3}} ${4:name}  `${5:default}` ${6:description}
 ``` 
 
 ### setAndGetProperty
@@ -243,21 +257,21 @@ ${1:property}${2::} ${3:null}${4:,}
 ```
 /**
  * @param {${1:type}} ${2:name}  `${3:default}` ${4:description} 
- * @${5:public}
+ * @${5|public,private,protected|}
  */
-set${6:Property}${7::} function (${2:name}) {
+set${6:Property}${7|:,=|} function (${2:name}) {
   var old${2:name} = this.${2:name};
   if (${2:name} !== old${2:name}) {
     ${8}
     this.${2:name} = ${2:name};
     //this.update${6:Property}(${2:name}, old${2:name});
   }
-}${10:,}
+},}
 /**
  * @returns {${1:type}} ${2:name} `${3:default}` ${4:description} 
- * @${5:public}
+ * @${5|public,private,protected|}
  */
-get${6:Property}${7::} function () {
+get${6:Property}${7|:,=|} function () {
   var ${2:name} = this.${2:name} || ${3:default};
   ${9}
   return ${2:name};
@@ -267,14 +281,14 @@ get${6:Property}${7::} function () {
 ### stringProperty
 #### `sp + tab` 
 ```
-${1:property}${2::} '${3:value}'${4:,}
+${1:property}${2|:,=|} '${3:value}'${4:,}
 ``` 
 
 ### todoTag
 #### `td + tab` 
 ```
 /**
- * @todo ${1:description}
+ * @todo ${1:description} $0
  */
 ``` 
 
@@ -282,9 +296,9 @@ ${1:property}${2::} '${3:value}'${4:,}
 #### `uf + tab` 
 ```
  /**
-  * @${1:private}
+  * @${1|private,protected,public|}
   */
-update${2:Property} ${3::} function (new${2:Property}, old${2:Property}) {
+update${2:Property} ${3|:,=|} function (new${2:Property}, old${2:Property}) {
   ${4}
 }${3:,}
 ``` 
@@ -293,7 +307,7 @@ update${2:Property} ${3::} function (new${2:Property}, old${2:Property}) {
 #### `vt + tab` 
 ```
 /**
- * @version ${1:major}${2:minor}${2:patch} 
+ * @version ${1:major}.${2:minor}.${3:patch} $0
  */
 ``` 
 
@@ -301,10 +315,10 @@ update${2:Property} ${3::} function (new${2:Property}, old${2:Property}) {
 #### `xl + tab` 
 ```
 ${Ext}.log({
-  msg: '${message:debug}',
-  level: '${type:warn}',
-  dump: ${arguments},
-  stack: ${false}
+  msg: '${1:debug}',
+  level: '${2|log,info,error,warn|}',
+  dump: ${3:arguments},
+  stack: ${4|true,false|}
 });
 ``` 
 

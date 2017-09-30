@@ -1,3 +1,7 @@
+## 0.1.8 (2017-09-29)
+
+* add console methods, and options to snippets to sugestions.  
+
 ## 0.1.7 (2017-09-18)
 
 * add copyright, to do, and version tag. 
