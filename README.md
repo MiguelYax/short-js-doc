@@ -13,7 +13,7 @@ short-js-doc
 - [Comment code](#commentcode)
 - [console debug block](#consoledebugblock)
 - [call function](#callfunction)
-- [console debug block](#consoledebugblock)
+- [console methods](#consolemethods)
 - [Copyright Tag](#copyrighttag)
 - [Context Tag](#contexttag)
 - [Control variables](#controlvariables)
@@ -98,7 +98,7 @@ console.${2|log,info,warn,error|}('${3:debug}', ${4:arguments}); $0
 ${1:function}($0);
 ``` 
 
-### consoleDebugBlock
+### consoleMethods
 #### `cm + tab` 
 ```
 //<debug>

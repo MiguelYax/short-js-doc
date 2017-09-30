@@ -142,7 +142,7 @@
 			"console.${2|assert,count,debug,dir,dirxml,error,group,groupCollapsed,groupEnd,info,log,profile,profileEnd,table,time,timeEnd,timeStamp,trace,warn|}(${4:arguments}); $0",
 			"//</debug>"
 		],
-		"description": "console debug block"
+		"description": "console methods"
 	},
 	"cc": {
 		"prefix": "cc",
