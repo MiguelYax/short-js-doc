@@ -16,23 +16,25 @@
 			"/**",
 			" * @class ${1:name}",
 			" * @extends ${2:extend}",
-			" * @alternateClassName ${3:alternateName} ",
 			" * @xtype ${4:xtype}",
 			" * ${5:description}",
 			" */",
 			"Ext.define('${1:name}', {",
 			"  extend: '${2:extend}',",
-			"  alternateClassName: '${3:alternateName}',",
 			"  xtype: '${4:xtype}',",
 			"  ${6://}requires: [${7}],",
 			"  initComponent: function (){",
-			"    var ${8:me} = this,",
-			"      ${9:Ex} = Ext;",
+			"    var ${8:me} = this;",
 			"",
-			"    ${9:Ex}.apply(${8:me}, {",
-			"      items: [${10:args:}]",
+			"    Ext.apply(${8:me}, {",
+			"      items: [",
+			"       {",
+			"        $0",
+			"       }",
+			"      ]",
 			"    });",
-			"    ${8:me}.callParent(${11:arguments});",
+			"",
+			"    ${8:me}.callParent(arguments);",
 			"  }",
 			"});"
 		],
@@ -41,7 +43,7 @@
 	"pt": {
 		"prefix": "pt",
 		"body": [
-			"@${1:mode} {${2:type}} ${3:name}  `${4:default}` ${5:description}"
+			"@${1|param,arg,argument|} {${2|String,Number,Boolean,Object,Array,Function,Date|}${3}} ${4:name}  `${5:default}` ${6:description}"
 		],
 		"description": "Property Tag"
 	},
@@ -49,37 +51,37 @@
 		"prefix": "pd",
 		"body": [
 			"/*",
-			" * @${1:cfg} {${2:type}} ${3:name}  `${4:default}` ${5:description}",
+			" * @${1|cfg,arg,argument|} {${2|String,Number,Boolean,Object,Array,Function,Date|}${3}} ${4:name}  `${5:default}` ${6:description}",
 			" */",
-			"${3:name}${6::} ${4:null}${7:,}"
+			"${4:name}${7|:,=|} ${5:null}${8:,}"
 		],
 		"description": "Property definition"
 	},
 	"pp": {
 		"prefix": "pp",
 		"body": [
-			"${1:property}${2::} ${3:null}${4:,}"
+			"${1:property}${2|:,=|} ${3:null}${4:,}"
 		],
 		"description": "Property"
 	},
 	"ep": {
 		"prefix": "ep",
 		"body": [
-			"${1:property}${2::} ${3}${4:property} ${5:,}"
+			"${1:property}${2|:,=|} ${3}${4:property} ${5:,}"
 		],
 		"description": "Equal name property and value"
 	},
 	"sp": {
 		"prefix": "sp",
 		"body": [
-			"${1:property}${2::} '${3:value}'${4:,}"
+			"${1:property}${2|:,=|} '${3:value}'${4:,}"
 		],
 		"description": "String property"
 	},
 	"gp": {
 		"prefix": "gp",
 		"body": [
-			"${1:property}${2::} ${3:model}.${4:get}('${5:dataIndex}')${6:,}"
+			"${1:property}${2|:,=|} ${3:model}.${4:get}('${5:dataIndex}')${6:,}"
 		],
 		"description": "Get Property"
 	},
@@ -94,15 +96,15 @@
 		"prefix": "bc",
 		"body": [
 			"${1:bind}:{",
-			"  ${2:property}:'{${3:value}}'${4:,}",
-			"}${5:,}"
+			"  ${2:property}: '{${3:value}}',$0",
+			"},"
 		],
 		"description": "Bind configuration"
 	},
 	"ap": {
 		"prefix": "ap",
 		"body": [
-			"${1:name}${2::} [${3}]${4:,}"
+			"${1:name}${2|:,=|} [${3}]${4:,}"
 		],
 		"description": "Array property"
 	},
@@ -110,15 +112,15 @@
 		"prefix": "op",
 		"body": [
 			"${1:name}${2::} {",
-			"  ${3:${4:property}: ${5:''}${6:,}}",
-			"}${7:,}"
+			"  ${4:property}: ${5:''}, $0",
+			"},"
 		],
 		"description": "Object property"
 	},
 	"ct": {
 		"prefix": "ct",
 		"body": [
-			"@${1:private} ${2:args}"
+			"@${1|private,protected,public|} ${2:args}"
 		],
 		"description": "Context Tag"
 	},
@@ -127,7 +129,17 @@
 		"body": [
 			"//<debug>",
 			"${1}",
-			"console.${2:log}('${3:debug}', ${4:arguments});",
+			"console.${2|log,info,warn,error|}('${3:debug}', ${4:arguments}); $0",
+			"//</debug>"
+		],
+		"description": "console debug block"
+	},
+	"cm": {
+		"prefix": "cm",
+		"body": [
+			"//<debug>",
+			"${1}",
+			"console.${2|assert,count,debug,dir,dirxml,error,group,groupCollapsed,groupEnd,info,log,profile,profileEnd,table,time,timeEnd,timeStamp,trace,warn|}(${4:arguments}); $0",
 			"//</debug>"
 		],
 		"description": "console debug block"
@@ -136,7 +148,7 @@
 		"prefix": "cc",
 		"body": [
 			"/**",
-			" * ${1}",
+			" * $0",
 			" */"
 		],
 		"description": "Comment code"
@@ -145,9 +157,9 @@
 		"prefix": "uf",
 		"body": [
 			" /**",
-			"  * @${1:private}",
+			"  * @${1|private,protected,public|}",
 			"  */",
-			"update${2:Property} ${3::} function (new${2:Property}, old${2:Property}) {",
+			"update${2:Property} ${3|:,=|} function (new${2:Property}, old${2:Property}) {",
 			"  ${4}",
 			"}${3:,}"
 		],
@@ -158,21 +170,21 @@
 		"body": [
 			"/**",
 			" * @param {${1:type}} ${2:name}  `${3:default}` ${4:description} ",
-			" * @${5:public}",
+			" * @${5|public,private,protected|}",
 			" */",
-			"set${6:Property}${7::} function (${2:name}) {",
+			"set${6:Property}${7|:,=|} function (${2:name}) {",
 			"  var old${2:name} = this.${2:name};",
 			"  if (${2:name} !== old${2:name}) {",
 			"    ${8}",
 			"    this.${2:name} = ${2:name};",
 			"    //this.update${6:Property}(${2:name}, old${2:name});",
 			"  }",
-			"}${10:,}",
+			"},}",
 			"/**",
 			" * @returns {${1:type}} ${2:name} `${3:default}` ${4:description} ",
-			" * @${5:public}",
+			" * @${5|public,private,protected|}",
 			" */",
-			"get${6:Property}${7::} function () {",
+			"get${6:Property}${7|:,=|} function () {",
 			"  var ${2:name} = this.${2:name} || ${3:default};",
 			"  ${9}",
 			"  return ${2:name};",
@@ -194,10 +206,10 @@
 		"prefix": "xl",
 		"body": [
 			"${Ext}.log({",
-			"  msg: '${message:debug}',",
-			"  level: '${type:warn}',",
-			"  dump: ${arguments},",
-			"  stack: ${false}",
+			"  msg: '${1:debug}',",
+			"  level: '${2|log,info,error,warn|}',",
+			"  dump: ${3:arguments},",
+			"  stack: ${4|true,false|}",
 			"});"
 		],
 		"description": "Ext log"
@@ -207,9 +219,9 @@
 		"body": [
 			"/**",
 			" * ${1:name} ${2:description}",
-			" * @${3:private}",
+			" * @${3|private,protected,public|}",
 			" */",
-			"${1:name}${4::} function (${5}) {",
+			"${1:name}${4|:,=|} function (${5}) {",
 			"  ${6}",
 			"}${7:,}"
 		],
@@ -219,29 +231,31 @@
 		"prefix": "mp",
 		"body": [
 			"/**",
-			" * @method ${1:name} ${2:description}",
-			" * @returns {${3:type}} ${4:property} `${5:default}` ${6:description}",
-			" * @${7:private}",
+			" * @${1|method,function|} ${2:name} ${3:description}",
+			" * @returns {${4|String,Number,Boolean,Object,Array,Function,Date|}} ${5:property} `${6:default}` ${7:description}",
+			" * @${8|private,protected,public|}",
 			" */",
-			" ${1:name}${9::} function (${10}) {",
-			"  var ${4:property} = ${5:null};",
-			"  ${13}",
-			"  return ${4:property};",
-			"}${15:,}"
+			" ${2:name} ${9|:,=|} function (${10}) {",
+			"  var ${5:property} = ${6:null};",
+			"  $0",
+			"  return ${5:property};",
+			"}"
 		],
 		"description": "Method Property"
 	},
 	"ew": {
 		"prefix": "ew",
 		"body": [
-			"Ext.${widget}('${xtype}'${1:,{${0}}});"
+			"Ext.${1|widget,create|}('${xtype}',{",
+			"  $0",
+			"});"
 		],
 		"description": "Ext Widget"
 	},
 	"cf": {
 		"prefix": "cf",
 		"body": [
-			"${1:function}(${2});"
+			"${1:function}($0);"
 		],
 		"description": "call function"
 	},
@@ -256,7 +270,7 @@
 		"prefix": "td",
 		"body": [
 			"/**",
-			" * @todo ${1:description}",
+			" * @todo ${1:description} $0",
 			" */"
 		],
 		"description": "Todo Tag"
@@ -265,7 +279,7 @@
 		"prefix": "gt",
 		"body": [
 			"/**",
-			" * @${1:tag} ${2} ",
+			" * @${1:tag} $0 ",
 			" */"
 		],
 		"description": "Generic Tag"
@@ -274,7 +288,7 @@
 		"prefix": "vt",
 		"body": [
 			"/**",
-			" * @version ${1:major}${2:minor}${2:patch} ",
+			" * @version ${1:major}.${2:minor}.${3:patch} $0",
 			" */"
 		],
 		"description": "Version Tag"
@@ -283,7 +297,7 @@
 		"prefix": "dt",
 		"body": [
 			"/**",
-			" * @deprecated   ${1} ",
+			" * @deprecated $0 ",
 			" */"
 		],
 		"description": "Deprecated Tag"
@@ -293,7 +307,7 @@
 		"body": [
 			"/**",
 			" * @copyright  ${1:name} ${2:year} ",
-			" * ${3} ",
+			" * $0 ",
 			" */"
 		],
 		"description": "Copyright Tag"
