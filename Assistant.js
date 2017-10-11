@@ -50,3 +50,4 @@ fs.writeFile('README.md', docContent, function (err) {
     }
     console.log('Writed');
 });
+

@@ -1,3 +1,7 @@
+## 0.1.8 (2017-10-10)
+
+* fix: bugs after updated snippets.
+
 ## 0.1.8 (2017-09-29)
 
 * add console methods, and options to snippets to sugestions.  

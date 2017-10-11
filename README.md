@@ -64,7 +64,7 @@ ${1:name}${2|:,=|} [${3}]${4:,}
 ### bindConfiguration
 #### `bc + tab` 
 ```
-${1:bind}:{
+${1:bind}: {
   ${2:property}: '{${3:value}}',$0
 },
 ``` 
@@ -103,7 +103,7 @@ ${1:function}($0);
 ```
 //<debug>
 ${1}
-console.${2|assert,count,debug,dir,dirxml,error,group,groupCollapsed,groupEnd,info,log,profile,profileEnd,table,time,timeEnd,timeStamp,trace,warn|}(${4:arguments}); $0
+  console.${2|assert,count,debug,dir,dirxml,error,group,groupCollapsed,groupEnd,info,log,profile,profileEnd,table,time,timeEnd,timeStamp,trace,warn|}(${4:arguments}); $0
 //</debug>
 ``` 
 
@@ -128,7 +128,8 @@ console.${2|assert,count,debug,dir,dirxml,error,group,groupCollapsed,groupEnd,in
 var ${1:me} = this,
   ${2:view} = ${1:me}.getView(),
   ${3:model} = ${1:me}.getViewModel(),
-  ${4:refs} = ${1:me}.getReferences()${5:;}
+  ${4:refs} = ${1:me}.getReferences();
+  $0
 ``` 
 
 ### deprecatedTag
@@ -190,8 +191,8 @@ Ext.${1|widget,create|}('${xtype}',{
  * @${3|private,protected,public|}
  */
 ${1:name}${4|:,=|} function (${5}) {
-  ${6}
-}${7:,}
+  $0
+},
 ``` 
 
 ### getProperty
@@ -216,11 +217,11 @@ ${1:property}${2|:,=|} ${3:model}.${4:get}('${5:dataIndex}')${6:,}
  * @returns {${4|String,Number,Boolean,Object,Array,Function,Date|}} ${5:property} `${6:default}` ${7:description}
  * @${8|private,protected,public|}
  */
- ${2:name} ${9|:,=|} function (${10}) {
+${2:name} ${9|:,=|} function (${10}) {
   var ${5:property} = ${6:null};
   $0
   return ${5:property};
-}
+},
 ``` 
 
 ### objectProperty
@@ -266,7 +267,7 @@ set${6:Property}${7|:,=|} function (${2:name}) {
     this.${2:name} = ${2:name};
     //this.update${6:Property}(${2:name}, old${2:name});
   }
-},}
+},
 /**
  * @returns {${1:type}} ${2:name} `${3:default}` ${4:description} 
  * @${5|public,private,protected|}
@@ -275,7 +276,7 @@ get${6:Property}${7|:,=|} function () {
   var ${2:name} = this.${2:name} || ${3:default};
   ${9}
   return ${2:name};
-}${10:,}
+},
 ``` 
 
 ### stringProperty
@@ -299,8 +300,8 @@ ${1:property}${2|:,=|} '${3:value}'${4:,}
   * @${1|private,protected,public|}
   */
 update${2:Property} ${3|:,=|} function (new${2:Property}, old${2:Property}) {
-  ${4}
-}${3:,}
+  $0
+},
 ``` 
 
 ### versionTag
