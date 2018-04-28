@@ -12,13 +12,13 @@ let contentList = [];
 let documentList = [];
 
 
-String.prototype.toCamelCase = function () {
-    return this.replace(/[^a-z ]/ig, '')  // Replace everything but letters and spaces.
-        .replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, // Find non-words, uppercase letters, leading-word letters, and multiple spaces.
-        function (match, index) {
-            return +match === 0 ? "" : match[index === 0 ? 'toLowerCase' : 'toUpperCase']();
-        });
-};
+// String.prototype.toCamelCase = function () {
+//     return this.replace(/[^a-z ]/ig, '')  // Replace everything but letters and spaces.
+//         .replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, // Find non-words, uppercase letters, leading-word letters, and multiple spaces.
+//             function (match, index) {
+//                 return +match === 0 ? "" : match[index === 0 ? 'toLowerCase' : 'toUpperCase']();
+//             });
+// };
 
 
 let keyList = Object.keys(rawSnippets);
@@ -26,22 +26,21 @@ keyList.sort();
 for (let index = 0; index < keyList.length; index++) {
     let name = keyList[index];
     let snippet = rawSnippets[name];
-    let lowerName = snippet.description.toCamelCase();
-    contentList.push('- [' + snippet.description + '](#' + lowerName.toLowerCase() + ')\n');
-    documentList.push('### ' + lowerName + '\n');
-    documentList.push('#### `' + snippet.prefix + ' + tab` \n');
+    let lowerName = snippet.description.replace(/\s+/g, '-').toLowerCase();
+    contentList.push('- [' + snippet.description + '](#' + lowerName + ')\n');
+    documentList.push('## ' + snippet.description + '\n');
+    documentList.push('### `' + snippet.prefix + ' + tab` \n');
     documentList.push('```\n' + snippet.body.join('\n') + '\n``` \n\n');
-
 }
-let docContent = '# ' + package.displayName + '  \n' + package.name + '  \n\n  # ' + package.description + ' \n';
+let docContent = '# ' + package.displayName + '  \n' + '   ' + package.description + ' \n';
 // docContent += "### Basic documetation example: \n\n";
 // docContent += '![Image of Snippets](https://raw.githubusercontent.com/Krazeus/ApiDocSnippets/master/images/basic.gif) \n';
 // docContent += "### Custom documentation example: \n\n";
 // docContent += '![Image of Snippets](https://raw.githubusercontent.com/Krazeus/ApiDocSnippets/master/images/custom.gif) \n';
 
-docContent += '### Content:  \n\n';
+docContent += '# Content:  \n\n';
 docContent += contentList.join('') + '\n\n';
-docContent += '### Example:  \n\n';
+docContent += '# Example:  \n\n';
 docContent += documentList.join('');
 
 fs.writeFile('README.md', docContent, function (err) {

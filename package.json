@@ -1,6 +1,6 @@
 {
   "name": "short-js-doc",
-  "version": "0.1.10",
+  "version": "0.2.0",
   "publisher": "myax",
   "displayName": "Short JS Doc",
   "description": "Short Javascript Snippets and Documentation based on JSDuck.  \n A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDuck Ducumentation implenting for Sencha Ext JS.",

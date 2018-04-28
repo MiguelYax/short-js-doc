@@ -4,11 +4,20 @@
 		"body": [
 			"/*!",
 			" * @author ${1:user} <${2:email}>",
-			" * date ${3:month}/${4:day}/${5:year}",
-			" * ${6:description}",
+			" * date ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}",
+			" * ${3:description} $0",
 			" */"
 		],
-		"description": "Author Information"
+		"description": "Author information"
+	},
+	"jc": {
+		"prefix": "jc",
+		"body": [
+			"/*",
+			" * ${1:user} ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} ${2:justification} $0",
+			" */"
+		],
+		"description": "Justification change"
 	},
 	"ed": {
 		"prefix": "ed",
@@ -38,14 +47,14 @@
 			"  }",
 			"});"
 		],
-		"description": "Ext JS Class Definition"
+		"description": "Ext JS Class definition"
 	},
 	"pt": {
 		"prefix": "pt",
 		"body": [
 			"@${1|param,arg,argument|} {${2|String,Number,Boolean,Object,Array,Function,Date|}${3}} ${4:name}  `${5:default}` ${6:description}"
 		],
-		"description": "Property Tag"
+		"description": "Property tag"
 	},
 	"pd": {
 		"prefix": "pd",
@@ -83,7 +92,7 @@
 		"body": [
 			"${1:property}${2|:,=|} ${3:model}.${4:get}('${5:dataIndex}')${6:,}"
 		],
-		"description": "Get Property"
+		"description": "Get property"
 	},
 	"bp": {
 		"prefix": "bp",
@@ -122,7 +131,7 @@
 		"body": [
 			"@${1|private,protected,public|} ${2:args}"
 		],
-		"description": "Context Tag"
+		"description": "Context tag"
 	},
 	"cd": {
 		"prefix": "cd",
@@ -132,7 +141,7 @@
 			"console.${2|log,info,warn,error|}('${3:debug}', ${4:arguments}); $0",
 			"//</debug>"
 		],
-		"description": "console debug block"
+		"description": "Console debug block"
 	},
 	"cm": {
 		"prefix": "cm",
@@ -142,7 +151,7 @@
 			"  console.${2|assert,count,debug,dir,dirxml,error,group,groupCollapsed,groupEnd,info,log,profile,profileEnd,table,time,timeEnd,timeStamp,trace,warn|}(${4:arguments}); $0",
 			"//</debug>"
 		],
-		"description": "console methods"
+		"description": "Console methods"
 	},
 	"cc": {
 		"prefix": "cc",
@@ -163,7 +172,7 @@
 			"  $0",
 			"},"
 		],
-		"description": "update function property"
+		"description": "Update function property"
 	},
 	"sg": {
 		"prefix": "sg",
@@ -190,7 +199,7 @@
 			"  return ${2:name};",
 			"},"
 		],
-		"description": "set and get property"
+		"description": "Set and get property"
 	},
 	"cv": {
 		"prefix": "cv",
@@ -226,7 +235,7 @@
 			"  $0",
 			"},"
 		],
-		"description": "Function Property"
+		"description": "Function property"
 	},
 	"mp": {
 		"prefix": "mp",
@@ -242,7 +251,7 @@
 			"  return ${5:property};",
 			"},"
 		],
-		"description": "Method Property"
+		"description": "Method property"
 	},
 	"ew": {
 		"prefix": "ew",
@@ -251,14 +260,14 @@
 			"  $0",
 			"});"
 		],
-		"description": "Ext Widget"
+		"description": "Ext widget"
 	},
 	"cf": {
 		"prefix": "cf",
 		"body": [
 			"${1:function}($0);"
 		],
-		"description": "call function"
+		"description": "Call function"
 	},
 	"aop": {
 		"prefix": "aop",
@@ -298,7 +307,7 @@
 		"prefix": "dt",
 		"body": [
 			"/**",
-			" * @deprecated $0 ",
+			" * @deprecated ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} $0 ",
 			" */"
 		],
 		"description": "Deprecated Tag"

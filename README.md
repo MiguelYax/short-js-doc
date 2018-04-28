@@ -1,90 +1,89 @@
 # Short JS Doc  
-short-js-doc  
-
-  # Short Javascript Snippets and Documentation based on JSDuck.  
+   Short Javascript Snippets and Documentation based on JSDuck.  
  A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDuck Ducumentation implenting for Sencha Ext JS. 
-### Content:  
+# Content:  
 
-- [Access object property](#accessobjectproperty)
-- [Array property](#arrayproperty)
-- [Author Information](#authorinformation)
-- [Bind configuration](#bindconfiguration)
-- [Bind property](#bindproperty)
-- [Comment code](#commentcode)
-- [console debug block](#consoledebugblock)
-- [call function](#callfunction)
-- [console methods](#consolemethods)
-- [Copyright Tag](#copyrighttag)
-- [Context Tag](#contexttag)
-- [Control variables](#controlvariables)
-- [Deprecated Tag](#deprecatedtag)
-- [Ext JS Class Definition](#extjsclassdefinition)
-- [Equal name property and value](#equalnamepropertyandvalue)
-- [Ext Widget](#extwidget)
-- [Function Property](#functionproperty)
-- [Get Property](#getproperty)
-- [Generic Tag](#generictag)
-- [Method Property](#methodproperty)
-- [Object property](#objectproperty)
-- [Property definition](#propertydefinition)
+- [Access object property](#access-object-property)
+- [Array property](#array-property)
+- [Author information](#author-information)
+- [Bind configuration](#bind-configuration)
+- [Bind property](#bind-property)
+- [Comment code](#comment-code)
+- [Console debug block](#console-debug-block)
+- [Call function](#call-function)
+- [Console methods](#console-methods)
+- [Copyright Tag](#copyright-tag)
+- [Context tag](#context-tag)
+- [Control variables](#control-variables)
+- [Deprecated Tag](#deprecated-tag)
+- [Ext JS Class definition](#ext-js-class-definition)
+- [Equal name property and value](#equal-name-property-and-value)
+- [Ext widget](#ext-widget)
+- [Function property](#function-property)
+- [Get property](#get-property)
+- [Generic Tag](#generic-tag)
+- [Justification change](#justification-change)
+- [Method property](#method-property)
+- [Object property](#object-property)
+- [Property definition](#property-definition)
 - [Property](#property)
-- [Property Tag](#propertytag)
-- [set and get property](#setandgetproperty)
-- [String property](#stringproperty)
-- [Todo Tag](#todotag)
-- [update function property](#updatefunctionproperty)
-- [Version Tag](#versiontag)
-- [Ext log](#extlog)
+- [Property tag](#property-tag)
+- [Set and get property](#set-and-get-property)
+- [String property](#string-property)
+- [Todo Tag](#todo-tag)
+- [Update function property](#update-function-property)
+- [Version Tag](#version-tag)
+- [Ext log](#ext-log)
 
 
-### Example:  
+# Example:  
 
-### accessObjectProperty
-#### `aop + tab` 
+## Access object property
+### `aop + tab` 
 ```
 ${1:object}[${2:'${3:property}'}];
 ``` 
 
-### arrayProperty
-#### `ap + tab` 
+## Array property
+### `ap + tab` 
 ```
 ${1:name}${2|:,=|} [${3}]${4:,}
 ``` 
 
-### authorInformation
-#### `at + tab` 
+## Author information
+### `at + tab` 
 ```
 /*!
  * @author ${1:user} <${2:email}>
- * date ${3:month}/${4:day}/${5:year}
- * ${6:description}
+ * date ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}
+ * ${3:description} $0
  */
 ``` 
 
-### bindConfiguration
-#### `bc + tab` 
+## Bind configuration
+### `bc + tab` 
 ```
 ${1:bind}: {
   ${2:property}: '{${3:value}}',$0
 },
 ``` 
 
-### bindProperty
-#### `bp + tab` 
+## Bind property
+### `bp + tab` 
 ```
 ${1:property}: '{${2:value}}'${3:,}
 ``` 
 
-### commentCode
-#### `cc + tab` 
+## Comment code
+### `cc + tab` 
 ```
 /**
  * $0
  */
 ``` 
 
-### consoleDebugBlock
-#### `cd + tab` 
+## Console debug block
+### `cd + tab` 
 ```
 //<debug>
 ${1}
@@ -92,14 +91,14 @@ console.${2|log,info,warn,error|}('${3:debug}', ${4:arguments}); $0
 //</debug>
 ``` 
 
-### callFunction
-#### `cf + tab` 
+## Call function
+### `cf + tab` 
 ```
 ${1:function}($0);
 ``` 
 
-### consoleMethods
-#### `cm + tab` 
+## Console methods
+### `cm + tab` 
 ```
 //<debug>
 ${1}
@@ -107,8 +106,8 @@ ${1}
 //</debug>
 ``` 
 
-### copyrightTag
-#### `crt + tab` 
+## Copyright Tag
+### `crt + tab` 
 ```
 /**
  * @copyright  ${1:name} ${2:year} 
@@ -116,14 +115,14 @@ ${1}
  */
 ``` 
 
-### contextTag
-#### `ct + tab` 
+## Context tag
+### `ct + tab` 
 ```
 @${1|private,protected,public|} ${2:args}
 ``` 
 
-### controlVariables
-#### `cv + tab` 
+## Control variables
+### `cv + tab` 
 ```
 var ${1:me} = this,
   ${2:view} = ${1:me}.getView(),
@@ -132,16 +131,16 @@ var ${1:me} = this,
   $0
 ``` 
 
-### deprecatedTag
-#### `dt + tab` 
+## Deprecated Tag
+### `dt + tab` 
 ```
 /**
- * @deprecated $0 
+ * @deprecated ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} $0 
  */
 ``` 
 
-### extJSClassDefinition
-#### `ed + tab` 
+## Ext JS Class definition
+### `ed + tab` 
 ```
 /**
  * @class ${1:name}
@@ -169,22 +168,22 @@ Ext.define('${1:name}', {
 });
 ``` 
 
-### equalNamePropertyAndValue
-#### `ep + tab` 
+## Equal name property and value
+### `ep + tab` 
 ```
 ${1:property}${2|:,=|} ${3}${4:property} ${5:,}
 ``` 
 
-### extWidget
-#### `ew + tab` 
+## Ext widget
+### `ew + tab` 
 ```
 Ext.${1|widget,create|}('${xtype}',{
   $0
 });
 ``` 
 
-### functionProperty
-#### `fp + tab` 
+## Function property
+### `fp + tab` 
 ```
 /**
  * ${1:name} ${2:description}
@@ -195,22 +194,30 @@ ${1:name}${4|:,=|} function (${5}) {
 },
 ``` 
 
-### getProperty
-#### `gp + tab` 
+## Get property
+### `gp + tab` 
 ```
 ${1:property}${2|:,=|} ${3:model}.${4:get}('${5:dataIndex}')${6:,}
 ``` 
 
-### genericTag
-#### `gt + tab` 
+## Generic Tag
+### `gt + tab` 
 ```
 /**
  * @${1:tag} $0 
  */
 ``` 
 
-### methodProperty
-#### `mp + tab` 
+## Justification change
+### `jc + tab` 
+```
+/*
+ * ${1:user} ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} ${2:justification} $0
+ */
+``` 
+
+## Method property
+### `mp + tab` 
 ```
 /**
  * @${1|method,function|} ${2:name} ${3:description}
@@ -224,16 +231,16 @@ ${2:name} ${9|:,=|} function (${10}) {
 },
 ``` 
 
-### objectProperty
-#### `op + tab` 
+## Object property
+### `op + tab` 
 ```
 ${1:name}${2::} {
   ${4:property}: ${5:''}, $0
 },
 ``` 
 
-### propertyDefinition
-#### `pd + tab` 
+## Property definition
+### `pd + tab` 
 ```
 /*
  * @${1|cfg,arg,argument|} {${2|String,Number,Boolean,Object,Array,Function,Date|}${3}} ${4:name}  `${5:default}` ${6:description}
@@ -241,20 +248,20 @@ ${1:name}${2::} {
 ${4:name}${7|:,=|} ${5:null}${8:,}
 ``` 
 
-### property
-#### `pp + tab` 
+## Property
+### `pp + tab` 
 ```
 ${1:property}${2|:,=|} ${3:null}${4:,}
 ``` 
 
-### propertyTag
-#### `pt + tab` 
+## Property tag
+### `pt + tab` 
 ```
 @${1|param,arg,argument|} {${2|String,Number,Boolean,Object,Array,Function,Date|}${3}} ${4:name}  `${5:default}` ${6:description}
 ``` 
 
-### setAndGetProperty
-#### `sg + tab` 
+## Set and get property
+### `sg + tab` 
 ```
 /**
  * @param {${1:type}} ${2:name}  `${3:default}` ${4:description} 
@@ -279,22 +286,22 @@ get${6:Property}${7|:,=|} function () {
 },
 ``` 
 
-### stringProperty
-#### `sp + tab` 
+## String property
+### `sp + tab` 
 ```
 ${1:property}${2|:,=|} '${3:value}'${4:,}
 ``` 
 
-### todoTag
-#### `td + tab` 
+## Todo Tag
+### `td + tab` 
 ```
 /**
  * @todo ${1:description} $0
  */
 ``` 
 
-### updateFunctionProperty
-#### `uf + tab` 
+## Update function property
+### `uf + tab` 
 ```
  /**
   * @${1|private,protected,public|}
@@ -304,16 +311,16 @@ update${2:Property} ${3|:,=|} function (new${2:Property}, old${2:Property}) {
 },
 ``` 
 
-### versionTag
-#### `vt + tab` 
+## Version Tag
+### `vt + tab` 
 ```
 /**
  * @version ${1:major}.${2:minor}.${3:patch} $0
  */
 ``` 
 
-### extLog
-#### `xl + tab` 
+## Ext log
+### `xl + tab` 
 ```
 ${Ext}.log({
   msg: '${1:debug}',
