@@ -10,6 +10,19 @@
 		],
 		"description": "Author information"
 	},
+	"af": {
+		"prefix": "af",
+		"body": [
+			"($1) => { $0 }"
+		],
+		"description": "Arrow function"
+	},
+	"saf": {
+		"prefix": "saf",
+		"body": [
+			"($1) => $0 "
+		]
+	},
 	"jc": {
 		"prefix": "jc",
 		"body": [
@@ -184,7 +197,7 @@
 			"set${6:Property}${7|:,=|} function (${2:name}) {",
 			"  var old${2:name} = this.${2:name};",
 			"  if (${2:name} !== old${2:name}) {",
-			"    ${8}",
+			"    $8}",
 			"    this.${2:name} = ${2:name};",
 			"    //this.update${6:Property}(${2:name}, old${2:name});",
 			"  }",
