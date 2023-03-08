@@ -1,4 +1,6 @@
 ## NEXT 
+
+## 0.3.0 
 * Add eslint and refactoring code
 
 ## 0.1.8 (2017-10-12)
