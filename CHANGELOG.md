@@ -1,3 +1,6 @@
+## NEXT 
+* Add eslint and refactoring code
+
 ## 0.1.8 (2017-10-12)
 
 * add support to .vue files

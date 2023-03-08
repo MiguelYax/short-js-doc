@@ -3,12 +3,13 @@
   "version": "0.2.0",
   "publisher": "myax",
   "displayName": "Short JS Doc",
-  "description": "Short Javascript Snippets and Documentation based on JSDuck.  \n A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDuck Ducumentation implenting for Sencha Ext JS.",
+  "description": "Short Javascript Snippets and Documentation based on JSDoc.  \n A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDoc.  Including snippets for Sencha Ext JS.",
   "author": "Miguel Yax <mig_dj@hotmail.com>",
   "icon": "images/icon.png",
   "license": "MIT",
   "scripts": {
-    "docs": "node assistant.js",
+    "docs": "node ./bin/cli docs",
+    "postversion": "node ./bin/cli changelog",
     "lint": "eslint ."
   },
   "engines": {
@@ -52,7 +53,8 @@
   },
   "devDependencies": {
     "eslint": "^8.35.0",
-    "eslint-config-airbnb-base": "^15.0.0"
+    "eslint-config-airbnb-base": "^15.0.0",
+    "yargs": "^17.7.1"
   },
   "volta": {
     "node": "18.15.0"

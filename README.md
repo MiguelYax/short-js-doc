@@ -1,7 +1,9 @@
 # Short JS Doc
-# Short Javascript Snippets and Documentation based on JSDuck.  
- A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDuck Ducumentation implenting for Sencha Ext JS.
+# Short Javascript Snippets and Documentation based on JSDoc.  
+ A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDoc.  Including snippets for Sencha Ext JS.
 ## Content:
+- [Async arrow function](#async-arrow-function)
+- [Arrow function](#arrow-function)
 - [Access object property](#access-object-property)
 - [Array property](#array-property)
 - [Author information](#author-information)
@@ -27,6 +29,7 @@
 - [Property definition](#property-definition)
 - [Property](#property)
 - [Property tag](#property-tag)
+- [Shorter arrow function](#shorter-arrow-function)
 - [Set and get property](#set-and-get-property)
 - [String property](#string-property)
 - [Todo Tag](#todo-tag)
@@ -34,6 +37,16 @@
 - [Version Tag](#version-tag)
 - [Ext log](#ext-log)
 ## Example:
+## Async arrow function
+### `aaf + tab`
+```
+async ($1) => { $0 }
+```
+## Arrow function
+### `af + tab`
+```
+($1) => { $0 }
+```
 ## Access object property
 ### `aop + tab`
 ```
@@ -230,6 +243,11 @@ ${1:property}${2|:,=|} ${3:null}${4:,}
 ### `pt + tab`
 ```
 @${1|param,arg,argument|} {${2|String,Number,Boolean,Object,Array,Function,Date|}${3}} ${4:name}  `${5:default}` ${6:description}
+```
+## Shorter arrow function
+### `saf + tab`
+```
+($1) => $0 
 ```
 ## Set and get property
 ### `sg + tab`

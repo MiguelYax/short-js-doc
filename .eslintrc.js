@@ -9,6 +9,9 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
-    'no-console': 'off',
+    camelcase: ['warn', {
+      properties: 'never',
+      ignoreDestructuring: true,
+    }],
   },
 };

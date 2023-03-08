@@ -17,11 +17,19 @@
 		],
 		"description": "Arrow function"
 	},
+	"aaf": {
+		"prefix": "aaf",
+		"body": [
+			"async ($1) => { $0 }"
+		],
+		"description": "Async arrow function"
+	},
 	"saf": {
 		"prefix": "saf",
 		"body": [
 			"($1) => $0 "
-		]
+		],
+		"description": "Shorter arrow function"
 	},
 	"jc": {
 		"prefix": "jc",
