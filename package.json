@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "docs": "node ./bin/cli docs",
-    "postversion": "node ./bin/cli changelog",
+    "postversion": "node ./bin/cli changelog && && git commit -m \"Updated Changelog.md file\" -i CHANGELOG.md && git push && git push --tags",
     "lint": "eslint ."
   },
   "engines": {

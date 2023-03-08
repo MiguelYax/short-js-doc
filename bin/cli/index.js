@@ -14,7 +14,7 @@ const changelog = async () => {
   const content = await readFile('./CHANGELOG.md', { encoding: 'utf8' });
   const { npm_new_version } = process.env;
   if (npm_new_version && !content.includes(npm_new_version)) {
-    const result = content.replace('## NEXT', `## NEXT \n## ${npm_new_version}`);
+    const result = content.replace('## NEXT', `## NEXT \n\n## ${npm_new_version}`);
     await writeFile('./CHANGELOG.md', result, 'utf-8');
   }
 };
