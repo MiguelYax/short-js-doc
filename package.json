@@ -1,6 +1,6 @@
 {
   "name": "short-js-doc",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "publisher": "myax",
   "displayName": "Short JS Doc",
   "description": "Short Javascript Snippets and Documentation based on JSDoc.  \n A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDoc.  Including snippets for Sencha Ext JS.",
