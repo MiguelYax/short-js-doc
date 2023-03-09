@@ -65,8 +65,9 @@ async ($1) => { $0 }
 /*!
  * @author ${1:user} <${2:email}>
  * date ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}
- * ${3:description} $0
+ * ${3:description}
  */
+$0
 ```
 ## Bind configuration
 ### `bc + tab`
@@ -127,15 +128,17 @@ var ${1:me} = this,
 ```
 /**
  * @copyright  ${1:name} ${2:year} 
- * $0 
+ * $1 
  */
+$0
 ```
 ## Deprecated Tag
 ### `dt + tab`
 ```
 /**
- * @deprecated ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} $0 
+ * @deprecated ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} $1 
  */
+$0
 ```
 ## Equal name property and value
 ### `ep + tab`
@@ -219,8 +222,9 @@ ${1:property}${2|:,=|} ${3:model}.${4:get}('${5:dataIndex}')${6:,}
 ### `jc + tab`
 ```
 /*
- * ${1:user} ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} ${2:justification} $0
+ * ${1:user} ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} ${2:justification}
  */
+$0
 ```
 ## Method property
 ### `mp + tab`
@@ -300,8 +304,9 @@ ${1:property}${2|:,=|} '${3:value}'${4:,}
 ### `td + tab`
 ```
 /**
- * @todo ${1:description} $0
+ * @todo ${1:description}
  */
+$0
 ```
 ## Update function property
 ### `uf + tab`
@@ -323,6 +328,7 @@ $0
 ### `vt + tab`
 ```
 /**
- * @version ${1:major}.${2:minor}.${3:patch} $0
+ * @version ${1:major}.${2:minor}.${3:patch} $1
  */
+$0
 ```
