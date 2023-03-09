@@ -3,9 +3,6 @@
  * date 3/31/2017
 */
 
-/* eslint-disable import/no-extraneous-dependencies */
-const yargs = require('yargs/yargs');
-const { hideBin } = require('yargs/helpers');
 const { writeFile } = require('fs').promises;
 const pkg = require('../../package.json');
 const rawSnippets = require('../../snippets/short-js-doc.json');
@@ -44,7 +41,4 @@ const docs = async () => {
   await writeFile('README.md', docContent.join('\n'), 'utf-8');
 };
 
-yargs(hideBin(process.argv))
-  .command('docs', 'Generate documentation', {}, docs)
-  .demandCommand(1)
-  .parse();
+docs();

@@ -2,13 +2,13 @@
   "name": "short-js-doc",
   "version": "0.5.0",
   "publisher": "myax",
-  "displayName": "Short JS Doc",
+  "displayName": "Short JSDoc",
   "description": "Short Javascript Snippets and Documentation based on JSDoc.  \n A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDoc.  Including snippets for Sencha Ext JS.",
   "author": "Miguel Yax <mig_dj@hotmail.com>",
   "icon": "images/icon.png",
   "license": "MIT",
   "scripts": {
-    "docs": "node ./bin/cli docs",
+    "docs": "node ./bin/docs",
     "preversion": "npm run lint && npm run docs",
     "changelog": "sed -i \"s/## NEXT/## NEXT\\n\\n## v$npm_new_version/g\" CHANGELOG.md && git commit -am v$npm_new_version",
     "tag": "git tag -a v$npm_new_version -m v$npm_new_version && git push && git push --tags",
@@ -59,8 +59,7 @@
   },
   "devDependencies": {
     "eslint": "^8.35.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "yargs": "^17.7.1"
+    "eslint-config-airbnb-base": "^15.0.0"
   },
   "volta": {
     "node": "18.15.0"
