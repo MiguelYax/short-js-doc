@@ -1,4 +1,4 @@
-# Short JS Doc
+# Short JSDoc
 # Short Javascript Snippets and Documentation based on JSDoc.  
  A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDoc.  Including snippets for Sencha Ext JS.
 ## Content:

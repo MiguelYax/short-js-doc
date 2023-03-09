@@ -1,4 +1,6 @@
 ## NEXT
+
+## v0.6.0
 - Updated actions/checkout@v3
 
 ## v0.5.0
