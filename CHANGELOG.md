@@ -1,4 +1,5 @@
 ## NEXT
+- Added support for .cjs, .mjs, and .jsx file extensions
 
 ## v0.4.0 
 - Updated snippet descriptions

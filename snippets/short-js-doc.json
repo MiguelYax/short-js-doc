@@ -5,8 +5,9 @@
 			"/*!",
 			" * @author ${1:user} <${2:email}>",
 			" * date ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}",
-			" * ${3:description} $0",
-			" */"
+			" * ${3:description}",
+			" */",
+			"$0"
 		],
 		"description": "Author information"
 	},
@@ -35,8 +36,9 @@
 		"prefix": "jc",
 		"body": [
 			"/*",
-			" * ${1:user} ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} ${2:justification} $0",
-			" */"
+			" * ${1:user} ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} ${2:justification}",
+			" */",
+			"$0"
 		],
 		"description": "Justification change"
 	},
@@ -316,8 +318,9 @@
 		"prefix": "td",
 		"body": [
 			"/**",
-			" * @todo ${1:description} $0",
-			" */"
+			" * @todo ${1:description}",
+			" */",
+			"$0"
 		],
 		"description": "Todo Tag"
 	},
@@ -334,8 +337,9 @@
 		"prefix": "vt",
 		"body": [
 			"/**",
-			" * @version ${1:major}.${2:minor}.${3:patch} $0",
-			" */"
+			" * @version ${1:major}.${2:minor}.${3:patch} $1",
+			" */",
+			"$0"
 		],
 		"description": "Version Tag"
 	},
@@ -343,8 +347,9 @@
 		"prefix": "dt",
 		"body": [
 			"/**",
-			" * @deprecated ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} $0 ",
-			" */"
+			" * @deprecated ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} $1 ",
+			" */",
+			"$0"
 		],
 		"description": "Deprecated Tag"
 	},
@@ -353,8 +358,9 @@
 		"body": [
 			"/**",
 			" * @copyright  ${1:name} ${2:year} ",
-			" * $0 ",
-			" */"
+			" * $1 ",
+			" */",
+			"$0"
 		],
 		"description": "Copyright Tag"
 	}

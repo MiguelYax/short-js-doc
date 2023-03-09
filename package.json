@@ -30,7 +30,10 @@
         ],
         "extensions": [
           ".js",
-          ".vue"
+          ".jsx",
+          ".vue",
+          ".cjs",
+          ".mjs"
         ]
       },
       {
