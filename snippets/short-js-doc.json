@@ -1,5 +1,5 @@
 {
-	"at": {
+	"Author information": {
 		"prefix": "at",
 		"body": [
 			"/*!",
@@ -10,28 +10,28 @@
 		],
 		"description": "Author information"
 	},
-	"af": {
+	"Arrow function": {
 		"prefix": "af",
 		"body": [
 			"($1) => { $0 }"
 		],
 		"description": "Arrow function"
 	},
-	"aaf": {
+	"Async arrow function": {
 		"prefix": "aaf",
 		"body": [
 			"async ($1) => { $0 }"
 		],
 		"description": "Async arrow function"
 	},
-	"saf": {
+	"Shorter arrow function": {
 		"prefix": "saf",
 		"body": [
 			"($1) => $0 "
 		],
 		"description": "Shorter arrow function"
 	},
-	"jc": {
+	"Justification change": {
 		"prefix": "jc",
 		"body": [
 			"/*",
@@ -40,8 +40,8 @@
 		],
 		"description": "Justification change"
 	},
-	"ed": {
-		"prefix": "ed",
+	"Ext JS Class definition": {
+		"prefix": "ecd",
 		"body": [
 			"/**",
 			" * @class ${1:name}",
@@ -70,14 +70,21 @@
 		],
 		"description": "Ext JS Class definition"
 	},
-	"pt": {
+	"Export default": {
+		"prefix": "ed",
+		"body": [
+			"export default $0;"
+		],
+		"description": "Export default"
+	},
+	"Property tag": {
 		"prefix": "pt",
 		"body": [
 			"@${1|param,arg,argument|} {${2|String,Number,Boolean,Object,Array,Function,Date|}${3}} ${4:name}  `${5:default}` ${6:description}"
 		],
 		"description": "Property tag"
 	},
-	"pd": {
+	"Property definition": {
 		"prefix": "pd",
 		"body": [
 			"/*",
@@ -87,42 +94,42 @@
 		],
 		"description": "Property definition"
 	},
-	"pp": {
+	"Property": {
 		"prefix": "pp",
 		"body": [
 			"${1:property}${2|:,=|} ${3:null}${4:,}"
 		],
 		"description": "Property"
 	},
-	"ep": {
+	"Equal name property and value": {
 		"prefix": "ep",
 		"body": [
 			"${1:property}${2|:,=|} ${3}${4:property} ${5:,}"
 		],
 		"description": "Equal name property and value"
 	},
-	"sp": {
+	"String property": {
 		"prefix": "sp",
 		"body": [
 			"${1:property}${2|:,=|} '${3:value}'${4:,}"
 		],
 		"description": "String property"
 	},
-	"gp": {
+	"Get property": {
 		"prefix": "gp",
 		"body": [
 			"${1:property}${2|:,=|} ${3:model}.${4:get}('${5:dataIndex}')${6:,}"
 		],
 		"description": "Get property"
 	},
-	"bp": {
+	"Bind property": {
 		"prefix": "bp",
 		"body": [
 			"${1:property}: '{${2:value}}'${3:,}"
 		],
 		"description": "Bind property"
 	},
-	"bc": {
+	"Bind configuration": {
 		"prefix": "bc",
 		"body": [
 			"${1:bind}: {",
@@ -131,14 +138,14 @@
 		],
 		"description": "Bind configuration"
 	},
-	"ap": {
+	"Array property": {
 		"prefix": "ap",
 		"body": [
 			"${1:name}${2|:,=|} [${3}]${4:,}"
 		],
 		"description": "Array property"
 	},
-	"op": {
+	"Object property": {
 		"prefix": "op",
 		"body": [
 			"${1:name}${2::} {",
@@ -147,14 +154,14 @@
 		],
 		"description": "Object property"
 	},
-	"ct": {
+	"Context tag": {
 		"prefix": "ct",
 		"body": [
 			"@${1|private,protected,public|} ${2:args}"
 		],
 		"description": "Context tag"
 	},
-	"cd": {
+	"Console debug block": {
 		"prefix": "cd",
 		"body": [
 			"//<debug>",
@@ -164,7 +171,7 @@
 		],
 		"description": "Console debug block"
 	},
-	"cm": {
+	"Console methods": {
 		"prefix": "cm",
 		"body": [
 			"//<debug>",
@@ -174,7 +181,7 @@
 		],
 		"description": "Console methods"
 	},
-	"cc": {
+	"Comment code": {
 		"prefix": "cc",
 		"body": [
 			"/**",
@@ -183,7 +190,7 @@
 		],
 		"description": "Comment code"
 	},
-	"uf": {
+	"Update function property": {
 		"prefix": "uf",
 		"body": [
 			" /**",
@@ -195,7 +202,15 @@
 		],
 		"description": "Update function property"
 	},
-	"sg": {
+	"Use strict": {
+		"prefix": "us",
+		"body": [
+			"'use strict';",
+			"$0"
+		],
+		"description": "Use strict"
+	},
+	"Set and get property": {
 		"prefix": "sg",
 		"body": [
 			"/**",
@@ -222,7 +237,7 @@
 		],
 		"description": "Set and get property"
 	},
-	"cv": {
+	"Control variables": {
 		"prefix": "cv",
 		"body": [
 			"var ${1:me} = this,",
@@ -233,7 +248,7 @@
 		],
 		"description": "Control variables"
 	},
-	"xl": {
+	"Ext log": {
 		"prefix": "xl",
 		"body": [
 			"${Ext}.log({",
@@ -245,7 +260,7 @@
 		],
 		"description": "Ext log"
 	},
-	"fp": {
+	"Function property": {
 		"prefix": "fp",
 		"body": [
 			"/**",
@@ -258,7 +273,7 @@
 		],
 		"description": "Function property"
 	},
-	"mp": {
+	"Method property": {
 		"prefix": "mp",
 		"body": [
 			"/**",
@@ -274,7 +289,7 @@
 		],
 		"description": "Method property"
 	},
-	"ew": {
+	"Ext widget": {
 		"prefix": "ew",
 		"body": [
 			"Ext.${1|widget,create|}('${xtype}',{",
@@ -283,21 +298,21 @@
 		],
 		"description": "Ext widget"
 	},
-	"cf": {
+	"Call function": {
 		"prefix": "cf",
 		"body": [
 			"${1:function}($0);"
 		],
 		"description": "Call function"
 	},
-	"aop": {
+	"Access object property": {
 		"prefix": "aop",
 		"body": [
 			"${1:object}[${2:'${3:property}'}];"
 		],
 		"description": "Access object property"
 	},
-	"td": {
+	"Todo Tag": {
 		"prefix": "td",
 		"body": [
 			"/**",
@@ -306,7 +321,7 @@
 		],
 		"description": "Todo Tag"
 	},
-	"gt": {
+	"Generic Tag": {
 		"prefix": "gt",
 		"body": [
 			"/**",
@@ -315,7 +330,7 @@
 		],
 		"description": "Generic Tag"
 	},
-	"vt": {
+	"Version Tag": {
 		"prefix": "vt",
 		"body": [
 			"/**",
@@ -324,7 +339,7 @@
 		],
 		"description": "Version Tag"
 	},
-	"dt": {
+	"Deprecated Tag": {
 		"prefix": "dt",
 		"body": [
 			"/**",
@@ -333,7 +348,7 @@
 		],
 		"description": "Deprecated Tag"
 	},
-	"crt": {
+	"Copyright Tag": {
 		"prefix": "crt",
 		"body": [
 			"/**",

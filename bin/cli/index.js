@@ -6,18 +6,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
-const { writeFile, readFile } = require('fs').promises;
+const { writeFile } = require('fs').promises;
 const pkg = require('../../package.json');
 const rawSnippets = require('../../snippets/short-js-doc.json');
-
-const changelog = async () => {
-  const content = await readFile('./CHANGELOG.md', { encoding: 'utf8' });
-  const { npm_new_version } = process.env;
-  if (npm_new_version && !content.includes(npm_new_version)) {
-    const result = content.replace('## NEXT', `## NEXT \n\n## ${npm_new_version}`);
-    await writeFile('./CHANGELOG.md', result, 'utf-8');
-  }
-};
 
 const docs = async () => {
   const contentList = ['## Content:'];
@@ -55,6 +46,5 @@ const docs = async () => {
 
 yargs(hideBin(process.argv))
   .command('docs', 'Generate documentation', {}, docs)
-  .command('changelog', 'Update Changelog.md', {}, changelog)
   .demandCommand(1)
   .parse();

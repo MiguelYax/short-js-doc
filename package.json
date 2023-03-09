@@ -9,7 +9,10 @@
   "license": "MIT",
   "scripts": {
     "docs": "node ./bin/cli docs",
-    "postversion": "node ./bin/cli changelog && git commit -m \"Updated Changelog.md file\" -i CHANGELOG.md && git push && git push --tags",
+    "preversion": "npm run lint && npm run docs",
+    "changelog": "sed -i \"s/## NEXT/## NEXT\\n\\n## v$npm_new_version/g\" CHANGELOG.md && git commit -am v$npm_new_version",
+    "tag": "git tag -a v$npm_new_version -m v$npm_new_version && git push && git push --tags",
+    "postversion": "npm run changelog && npm run tag",
     "lint": "eslint ."
   },
   "engines": {

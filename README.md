@@ -2,51 +2,43 @@
 # Short Javascript Snippets and Documentation based on JSDoc.  
  A collection of Javascript snippets for faster developmment in Visual Studio Code Based on JsDoc.  Including snippets for Sencha Ext JS.
 ## Content:
-- [Async arrow function](#async-arrow-function)
-- [Arrow function](#arrow-function)
 - [Access object property](#access-object-property)
 - [Array property](#array-property)
+- [Arrow function](#arrow-function)
+- [Async arrow function](#async-arrow-function)
 - [Author information](#author-information)
 - [Bind configuration](#bind-configuration)
 - [Bind property](#bind-property)
+- [Call function](#call-function)
 - [Comment code](#comment-code)
 - [Console debug block](#console-debug-block)
-- [Call function](#call-function)
 - [Console methods](#console-methods)
-- [Copyright Tag](#copyright-tag)
 - [Context tag](#context-tag)
 - [Control variables](#control-variables)
+- [Copyright Tag](#copyright-tag)
 - [Deprecated Tag](#deprecated-tag)
-- [Ext JS Class definition](#ext-js-class-definition)
 - [Equal name property and value](#equal-name-property-and-value)
+- [Export default](#export-default)
+- [Ext JS Class definition](#ext-js-class-definition)
+- [Ext log](#ext-log)
 - [Ext widget](#ext-widget)
 - [Function property](#function-property)
-- [Get property](#get-property)
 - [Generic Tag](#generic-tag)
+- [Get property](#get-property)
 - [Justification change](#justification-change)
 - [Method property](#method-property)
 - [Object property](#object-property)
-- [Property definition](#property-definition)
 - [Property](#property)
+- [Property definition](#property-definition)
 - [Property tag](#property-tag)
-- [Shorter arrow function](#shorter-arrow-function)
 - [Set and get property](#set-and-get-property)
+- [Shorter arrow function](#shorter-arrow-function)
 - [String property](#string-property)
 - [Todo Tag](#todo-tag)
 - [Update function property](#update-function-property)
+- [Use strict](#use-strict)
 - [Version Tag](#version-tag)
-- [Ext log](#ext-log)
 ## Example:
-## Async arrow function
-### `aaf + tab`
-```
-async ($1) => { $0 }
-```
-## Arrow function
-### `af + tab`
-```
-($1) => { $0 }
-```
 ## Access object property
 ### `aop + tab`
 ```
@@ -56,6 +48,16 @@ ${1:object}[${2:'${3:property}'}];
 ### `ap + tab`
 ```
 ${1:name}${2|:,=|} [${3}]${4:,}
+```
+## Arrow function
+### `af + tab`
+```
+($1) => { $0 }
+```
+## Async arrow function
+### `aaf + tab`
+```
+async ($1) => { $0 }
 ```
 ## Author information
 ### `at + tab`
@@ -78,6 +80,11 @@ ${1:bind}: {
 ```
 ${1:property}: '{${2:value}}'${3:,}
 ```
+## Call function
+### `cf + tab`
+```
+${1:function}($0);
+```
 ## Comment code
 ### `cc + tab`
 ```
@@ -93,11 +100,6 @@ ${1}
 console.${2|log,info,warn,error|}('${3:debug}', ${4:arguments}); $0
 //</debug>
 ```
-## Call function
-### `cf + tab`
-```
-${1:function}($0);
-```
 ## Console methods
 ### `cm + tab`
 ```
@@ -105,14 +107,6 @@ ${1:function}($0);
 ${1}
   console.${2|assert,count,debug,dir,dirxml,error,group,groupCollapsed,groupEnd,info,log,profile,profileEnd,table,time,timeEnd,timeStamp,trace,warn|}(${4:arguments}); $0
 //</debug>
-```
-## Copyright Tag
-### `crt + tab`
-```
-/**
- * @copyright  ${1:name} ${2:year} 
- * $0 
- */
 ```
 ## Context tag
 ### `ct + tab`
@@ -128,6 +122,14 @@ var ${1:me} = this,
   ${4:refs} = ${1:me}.getReferences();
   $0
 ```
+## Copyright Tag
+### `crt + tab`
+```
+/**
+ * @copyright  ${1:name} ${2:year} 
+ * $0 
+ */
+```
 ## Deprecated Tag
 ### `dt + tab`
 ```
@@ -135,8 +137,18 @@ var ${1:me} = this,
  * @deprecated ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR} $0 
  */
 ```
-## Ext JS Class definition
+## Equal name property and value
+### `ep + tab`
+```
+${1:property}${2|:,=|} ${3}${4:property} ${5:,}
+```
+## Export default
 ### `ed + tab`
+```
+export default $0;
+```
+## Ext JS Class definition
+### `ecd + tab`
 ```
 /**
  * @class ${1:name}
@@ -163,10 +175,15 @@ Ext.define('${1:name}', {
   }
 });
 ```
-## Equal name property and value
-### `ep + tab`
+## Ext log
+### `xl + tab`
 ```
-${1:property}${2|:,=|} ${3}${4:property} ${5:,}
+${Ext}.log({
+  msg: '${1:debug}',
+  level: '${2|log,info,error,warn|}',
+  dump: ${3:arguments},
+  stack: ${4|true,false|}
+});
 ```
 ## Ext widget
 ### `ew + tab`
@@ -186,17 +203,17 @@ ${1:name}${4|:,=|} function (${5}) {
   $0
 },
 ```
-## Get property
-### `gp + tab`
-```
-${1:property}${2|:,=|} ${3:model}.${4:get}('${5:dataIndex}')${6:,}
-```
 ## Generic Tag
 ### `gt + tab`
 ```
 /**
  * @${1:tag} $0 
  */
+```
+## Get property
+### `gp + tab`
+```
+${1:property}${2|:,=|} ${3:model}.${4:get}('${5:dataIndex}')${6:,}
 ```
 ## Justification change
 ### `jc + tab`
@@ -226,6 +243,11 @@ ${1:name}${2::} {
   ${4:property}: ${5:''}, $0
 },
 ```
+## Property
+### `pp + tab`
+```
+${1:property}${2|:,=|} ${3:null}${4:,}
+```
 ## Property definition
 ### `pd + tab`
 ```
@@ -234,20 +256,10 @@ ${1:name}${2::} {
  */
 ${4:name}${7|:,=|} ${5:null}${8:,}
 ```
-## Property
-### `pp + tab`
-```
-${1:property}${2|:,=|} ${3:null}${4:,}
-```
 ## Property tag
 ### `pt + tab`
 ```
 @${1|param,arg,argument|} {${2|String,Number,Boolean,Object,Array,Function,Date|}${3}} ${4:name}  `${5:default}` ${6:description}
-```
-## Shorter arrow function
-### `saf + tab`
-```
-($1) => $0 
 ```
 ## Set and get property
 ### `sg + tab`
@@ -274,6 +286,11 @@ get${6:Property}${7|:,=|} function () {
   return ${2:name};
 },
 ```
+## Shorter arrow function
+### `saf + tab`
+```
+($1) => $0 
+```
 ## String property
 ### `sp + tab`
 ```
@@ -296,20 +313,16 @@ update${2:Property} ${3|:,=|} function (new${2:Property}, old${2:Property}) {
   $0
 },
 ```
+## Use strict
+### `us + tab`
+```
+'use strict';
+$0
+```
 ## Version Tag
 ### `vt + tab`
 ```
 /**
  * @version ${1:major}.${2:minor}.${3:patch} $0
  */
-```
-## Ext log
-### `xl + tab`
-```
-${Ext}.log({
-  msg: '${1:debug}',
-  level: '${2|log,info,error,warn|}',
-  dump: ${3:arguments},
-  stack: ${4|true,false|}
-});
 ```
