@@ -1,4 +1,6 @@
-## NEXT 
+## NEXT
+
+## v0.4.0 
 - Updated snippet descriptions
 - Updated project scripts to update Changelog.md file
 - Added MIT License
