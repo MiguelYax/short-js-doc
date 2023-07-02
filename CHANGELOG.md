@@ -1,5 +1,5 @@
 ## NEXT
-
+- Update dependencies
 ## v0.6.0
 - Updated actions/checkout@v3
 
